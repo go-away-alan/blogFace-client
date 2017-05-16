@@ -3,6 +3,7 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+const preLoadHide = require('../pre-load-hide')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -38,11 +39,21 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
+const closeModal = function () {
+  preLoadHide.preLoad()
+  $('#changepassword-form').trigger('reset')
+  $('#signup-form').trigger('reset')
+  $('#signin-form').trigger('reset')
+}
+
 const addHandlers = () => {
   $('#signup-form').on('submit', onSignUp)
   $('#signin-form').on('submit', onSignIn)
   $('#changepassword-form').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
+  $('#signup-close').on('click', closeModal)
+  $('#signin-close').on('click', closeModal)
+  $('#changepassword-close').on('click', closeModal)
 }
 
 module.exports = {
