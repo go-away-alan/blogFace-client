@@ -6,9 +6,18 @@ body {
     background-color: #000;
 }
 
+#bgimage {
+    background-image: url("../../assets/images/jump.jpg");
+}
+@media only screen and (max-width: 320px) {
+    #bgimage {
+        background-image: url("../../assets/images/jumpsmall.jpg");
+    }
+}
+
 #blogface {
   color: #fff;
-  font-size: 80px;
+  font-size: 7vw;
   text-align: center;
 }
 
@@ -18,13 +27,13 @@ body {
 
 #welcome-h1 {
   color: #fff;
-  font-size: 36px;
+  font-size: 4.0vh;
   text-align: center;
 }
 
 #welcome-text {
   color: #fff;
-  font-size: 18px;
+  font-size: 4vmin;
   text-align: center;
 }
 
