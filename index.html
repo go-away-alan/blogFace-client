@@ -90,7 +90,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
           <h4 class="modal-title">Sign Up</h4>
         </div>
         <div class="modal-body">
@@ -111,7 +111,7 @@
           <!--end signup form-->
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button id="signup-close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         </div>
       </div>
@@ -153,7 +153,7 @@
           <!--end signin form-->
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button id="signin-close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         </div>
       </div>
@@ -192,7 +192,7 @@
           <!--end changepassword form-->
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button id="changepassword-close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         </div>
       </div>
@@ -257,7 +257,7 @@
       <div class="modal-content">
         <div class="modal-body">
           <!-- Iframe displays the index.html for the Page Template  -->
-          <iframe src="./assets/templates/page-template-1.html" width="100%" height="90%" frameborder="0" scrolling="yes">
+          <iframe id="template-1-iframe" src="./assets/templates/page-template-1.html" width="100%" height="90%" frameborder="0" scrolling="yes">
             <p>
               iframes not supported
             </p>

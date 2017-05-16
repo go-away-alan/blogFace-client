@@ -17,8 +17,9 @@ const authEvents = require('./auth/auth-events.js')
 const pageEvents = require('./pages/page-events')
 const preLoadHide = require('./pre-load-hide')
 
+preLoadHide.preLoad()
+
 $(() => {
   authEvents.addHandlers()
   pageEvents.addHandlers()
-  preLoadHide.preLoad()
 })
