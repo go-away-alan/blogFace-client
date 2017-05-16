@@ -10,7 +10,7 @@ const onSignUp = function (event) {
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
-  $('#sign-up').trigger('reset')
+  $('#signup-form').trigger('reset')
 }
 
 const onSignIn = function (event) {
@@ -19,7 +19,7 @@ const onSignIn = function (event) {
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
-  $('#sign-in').trigger('reset')
+  $('#signin-form').trigger('reset')
 }
 
 const onChangePassword = function (event) {
@@ -28,7 +28,7 @@ const onChangePassword = function (event) {
   api.changePassword(data)
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)
-  $('#change-password').trigger('reset')
+  $('#changepassword-form').trigger('reset')
 }
 
 const onSignOut = function (event) {
@@ -39,9 +39,9 @@ const onSignOut = function (event) {
 }
 
 const addHandlers = () => {
-  $('#sign-up').on('submit', onSignUp)
-  $('#sign-in').on('submit', onSignIn)
-  $('#change-password').on('submit', onChangePassword)
+  $('#signup-form').on('submit', onSignUp)
+  $('#signin-form').on('submit', onSignIn)
+  $('#changepassword-form').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
 }
 
