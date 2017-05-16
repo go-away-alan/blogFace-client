@@ -11,7 +11,7 @@
 3. Create a new branch for your feature/fix using `git checkout -b branch-name-here`.
 4. Follow good commit practices to track the build-out of the new feature/fix. Add and commit changed files using `git add` and `git commit`.
 
-### If there is a merge on GitHub when you have a feature in progress
+### If there is a MERGE on GitHub when you have a feature in progress
 1. Update your local `master` branch so it reflects the current version in GitHub by running `git pull origin master`
 2. Checkout your feature branch (if you are not on it already) and run `git rebase master`. Your feature branch now includes all the most recent changes to `master`
 
