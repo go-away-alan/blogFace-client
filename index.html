@@ -15,6 +15,7 @@
 
 <body class="container-fluid">
 
+
   <!--begin nav bar-->
 
   <nav class="navbar navbar-default">
@@ -33,7 +34,7 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="#">Maybe About Link</a></li>
+          <li><a href="#about-modal" data-toggle="modal" data-target="#about-modal">About blogFace</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
@@ -54,6 +55,35 @@
 
   <!--end nav bar-->
 
+
+  <!--begin about modal-->
+
+  <div class="modal fade" id="about-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Welcome to blogFace!</h4>
+        </div>
+        <div class="modal-body">
+          <p>You are just a few steps away from creating your own blog and web space!  It's entirely free and all you need is an email address to get started.  Sign up now and find out how easy it is to build your own site!
+          <br><br><center><a href="#signin-modal" data-toggle="modal" data-target="#signin-modal"><button type="button" class="btn btn-success btn-lg">Get Started</button></a><center></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+
+  <!--end about modal-->
+
+
+
   <!--begin signup modal-->
 
   <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog">
@@ -64,6 +94,10 @@
           <h4 class="modal-title">Sign Up</h4>
         </div>
         <div class="modal-body">
+          <!--  Start of auth error handling-->
+        <div class='alert alert-danger' id='signup-error' role='alert'>
+          <strong>Oh snap!</strong> Try again, make sure your passwords are matching.
+        </div>
           <!--begin signup form-->
           <form id="signup-form">
             <fieldset>
@@ -100,6 +134,9 @@
           <h4 class="modal-title">Sign In</h4>
         </div>
         <div class="modal-body">
+          <div class="alert alert-danger" id='signin-error'role="alert">
+            <strong>Hmmmm</strong> Try again, email and password do not match.
+          </div>
           <!--begin signin form-->
           <form id="signin-form">
             <fieldset>
@@ -139,6 +176,10 @@
           <h4 class="modal-title">Change Password</h4>
         </div>
         <div class="modal-body">
+          <div class="alert alert-danger alert-dismissible" id='changepw-error'role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>What the....</strong> Change password failed. Try again.
+          </div>
           <!--begin changepassword form-->
           <form id="changepassword-form">
             <fieldset>
