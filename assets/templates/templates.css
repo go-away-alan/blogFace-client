@@ -1,0 +1,14 @@
+body {
+  font-family: 'Cantarell', sans-serif;
+}
+
+#template-1-header {
+  border-bottom: black 1px solid;
+}
+#template-1-footer {
+  text-align: center;
+}
+
+#template-1-email-text {
+  margin: 0;
+}
