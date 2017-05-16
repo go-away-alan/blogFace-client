@@ -7,18 +7,19 @@ const scrapeHtml = function (event) {
   event.preventDefault()
   const iframe = $('#template-1-iframe').contents()
   const data = {}
+  data.page = {}
   const header = iframe.find('#template-1-header-text').html()
-  data.header = header
+  data.page.header = header
   const subHeader = iframe.find('#template-1-sub-header-text').html()
-  data.subHeader = subHeader
+  data.page.subHeader = subHeader
   const pageContent = iframe.find('#template-1-about-text').html()
-  data.pageContent = pageContent
+  data.page.pageContent = pageContent
   const contact = iframe.find('#template-1-email-text').html()
-  data.contact = contact
+  data.page.contact = contact
   console.log('data is ', data)
-  const jsonData = JSON.stringify(data)
-  console.log(jsonData)
-  api.createPage(jsonData)
+  // const jsonData = JSON.stringify(data)
+  // console.log(jsonData)
+  api.createPage(data)
     .then(ui.createPageSuccess)
     .catch(ui.createPageFailure)
 }
