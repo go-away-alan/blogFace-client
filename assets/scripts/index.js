@@ -14,13 +14,9 @@ $(() => {
 require('./example')
 
 const authEvents = require('./auth/auth-events.js')
+const pageEvents = require('./pages/page-events')
 
 $(() => {
   authEvents.addHandlers()
-  $('#display-page-template-1').on('click', showTemplate1)
+  pageEvents.addHandlers()
 })
-
-const showTemplate1 = function (event) {
-  event.preventDefault()
-  $('#page-template-1-modal').show()
-}
