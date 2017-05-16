@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>blogFace</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags unless you know what you are doing -->
@@ -12,14 +12,186 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+      <!--begin nav bar-->
+
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">blogFace</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="#">Maybe About Link</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#signup-modal" data-toggle="modal" data-target="#signup-modal">Sign Up</a></li>
+                  <li><a href="#signin-modal" data-toggle="modal" data-target="#signin-modal">Sign In</a></li>
+                  <li><a href="#changepassword-modal" data-toggle="modal" data-target="#changepassword-modal">Change Password</a></li>
+                  <li><a href="#signout-modal" data-toggle="modal" data-target="#signout-modal">Sign Out</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+
+      <!--end nav bar-->
+
+      <!--begin signup modal-->
+
+  <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Sign Up</h4>
+      </div>
+      <div class="modal-body">
+        <!--begin signup form-->
+        <form id="signup-form">
+          <fieldset>
+            <legend></legend>
+              <input type="text" name="credentials[email]" id="signup-email" placeholder="Enter Email">
+              <input type="password" name="credentials[password]" id="signup-password" placeholder="Enter Password">
+              <input type="password" name="credentials[password_confirmation]" id="signup-passwordconfirm" placeholder="Confirm password">
+            <input type="submit" name="submit" value="Sign up!">
+          </fieldset>
+        </form>
+            <!--end signup form-->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--end signup modal-->
+
+
+<!--begin signin modal-->
+
+<div class="modal fade" id="signin-modal" tabindex="-1" role="dialog">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <h4 class="modal-title">Sign In</h4>
+</div>
+<div class="modal-body">
+  <!--begin signin form-->
+      <form id="signin-form">
+      <fieldset>
+        <legend>Please enter your login credentials below.</legend>
+
+          <input type="text" name="credentials[email]" id="sign-in email" placeholder="Enter Email">
+          <input type="password" name="credentials[password]" id="sign-in password" placeholder="Enter Password">
+          <input type="submit" name="submit" value="Sign in!">
+          <br><br><p>Don't yet have an account?  Please <a href="#signup-modal" data-toggle="modal" data-target="#signup-modal">Sign Up</a> here!</p>
+
+      </fieldset>
+      </form>
+      <!--end signin form-->
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+</div>
+</div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--end signin modal-->
+
+
+<!--begin changepassword modal-->
+
+<div class="modal fade" id="changepassword-modal" tabindex="-1" role="dialog">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <h4 class="modal-title">Change Password</h4>
+</div>
+<div class="modal-body">
+  <!--begin changepassword form-->
+  <form id="changepassword-form">
+    <fieldset>
+      <legend></legend>
+        <input type="password" name="passwords[old]" id="old password" placeholder="old password">
+        <input type="password" name="passwords[new]" id="new password" placeholder="new password">
+      <input type="submit" name="submit" value="Change password!">
+    </fieldset>
+  </form>
+      <!--end changepassword form-->
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+</div>
+</div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--end changepassword modal-->
+
+
+<!--begin signout modal-->
+
+<div class="modal fade" id="signout-modal" tabindex="-1" role="dialog">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <h4 class="modal-title">Sign Out</h4>
+</div>
+<div class="modal-body">
+  <!--begin signout form-->
+  <form id="sign-out">
+  <fieldset>
+    <input type="submit" class="btn btn-primary" id="signoff" name="submit" value="Sign out!">
+  </fieldset>
+</form>
+      <!--end signout form-->
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div>
+</div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--end signout modal-->
+
+
+  <div id="welcome-h1">
+      <h1>Welcome to</h1>
+  </div>
+  <div id="blogface">
+      <p>{ blogFace }</p>
+  </div>
+  <br><br><br><br>
+  <div id="welcome-text">
+      <p>Creating blog posts and web pages has never been easier!<br>  Click the Get Started button to begin!</p>
+  </div>
+  <br><br>
+  <div id="getstarted-button">
+    <a href="#signin-modal" data-toggle="modal" data-target="#signin-modal"><button type="button" class="btn btn-success btn-lg">Get Started</button></a>
+  </div>
+
     </body>
 </html>

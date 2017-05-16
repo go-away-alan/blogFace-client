@@ -1,2 +1,29 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+body {
+    background-image: url("../../assets/images/jump.jpg");
+    background-color: #000;
+}
+
+#blogface {
+  color: #fff;
+  font-size: 80px;
+  text-align: center;
+}
+
+#getstarted-button {
+  text-align: center;
+}
+
+#welcome-h1 {
+  color: #fff;
+  font-size: 36px;
+  text-align: center;
+}
+
+#welcome-text {
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+}
