@@ -4,6 +4,7 @@ const store = require('../store')
 
 const signUpSuccess = (data) => {
   console.log('signUpSuccess ran and data is ', data)
+  $('#signup-modal').modal('hide')
 }
 
 const signUpFailure = (error) => {
@@ -13,6 +14,7 @@ const signUpFailure = (error) => {
 const signInSuccess = (data) => {
   store.user = data.user
   console.log('sign in ran and data is ', data)
+  $('#signin-modal').modal('hide')
 }
 
 const signInFailure = (error) => {
@@ -21,6 +23,7 @@ const signInFailure = (error) => {
 
 const changePasswordSuccess = (data) => {
   console.log('change password ran and data is ', data)
+  $('#changepassword-modal').modal('hide')
 }
 
 const changePasswordFailure = (error) => {
@@ -30,6 +33,7 @@ const changePasswordFailure = (error) => {
 const signOutSuccess = (data) => {
   store.user = null
   console.log('sign in ran and data is ', data)
+  $('#signout-modal').modal('hide')
 }
 
 const signOutFailure = (error) => {
