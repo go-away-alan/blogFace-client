@@ -1,2 +1,15 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+body {
+    background-image: url("../../assets/images/jump.jpg");
+    background-color: #000;
+}
+
+#welcome-h1 {
+  color: #fff
+}
+
+#welcome-text {
+  color: #fff
+}
