@@ -17,4 +17,10 @@ const authEvents = require('./auth/auth-events.js')
 
 $(() => {
   authEvents.addHandlers()
+  $('#display-page-template-1').on('click', showTemplate1)
 })
+
+const showTemplate1 = function (event) {
+  event.preventDefault()
+  $('#page-template-1-modal').show()
+}
