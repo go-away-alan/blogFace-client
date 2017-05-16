@@ -5,29 +5,35 @@ const store = require('../store')
 const signUpSuccess = (data) => {
   console.log('signUpSuccess ran and data is ', data)
   $('#signup-modal').modal('hide')
+  $('#signup-error').hide()
 }
 
 const signUpFailure = (error) => {
   console.error('sign up failed and the error is ', error)
+  $('#signup-error').show()
 }
 
 const signInSuccess = (data) => {
   store.user = data.user
   console.log('sign in ran and data is ', data)
   $('#signin-modal').modal('hide')
+  $('#signin-error').hide()
 }
 
 const signInFailure = (error) => {
   console.error('sign in failed and the error is ', error)
+  $('#signin-error').show()
 }
 
 const changePasswordSuccess = (data) => {
   console.log('change password ran and data is ', data)
   $('#changepassword-modal').modal('hide')
+  $('#changepw-error').hide()
 }
 
 const changePasswordFailure = (error) => {
   console.error('change password failed and the error is ', error)
+  $('#changepw-error').show()
 }
 
 const signOutSuccess = (data) => {
