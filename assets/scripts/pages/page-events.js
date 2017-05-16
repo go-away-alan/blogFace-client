@@ -27,8 +27,8 @@ const scrapeHtml = function (event) {
 const showTemplate1 = function (event) {
   event.preventDefault()
   $('#page-template-1-modal').show()
-  $('#change-password-button').on('click', scrapeHtml)
-  $('#change-password-button').prop('disabled', false)
+  $('#submit-template-1-button').on('click', scrapeHtml)
+  $('#submit-template-1-button').prop('disabled', false)
 }
 
 const addHandlers = () => {
