@@ -1,23 +1,45 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-body {
-    background-image: url("../../assets/images/jump.jpg");
+// body {
+//     background-image: url("../../assets/images/jump.jpg");
+//     background-color: #000;
+//     // background-position: right 1;
+// }
+
+@media (max-width: 300px) {
+  body {
     background-color: #000;
+    background-image: url("../../assets/images/jumpsmall.jpg");
+  }
+}
+@media (min-width: 301px) and (max-width: 600px) {
+  body {
+    background-color: #000;
+    background-image: url("../../assets/images/jump.jpg");
+  }
+}
+@media (min-width: 601px) and (max-width: 768px) {
+  body {
+    background-color: #000;
+    background-image: url("../../assets/images/jump.jpg");
+  }
+}
+@media (min-width: 769px) {
+  body {
+    background-color: #000;
+    background-image: url("../../assets/images/jump.jpg");
+  }
 }
 
-#bgimage {
-    background-image: url("../../assets/images/jump.jpg");
-}
-@media only screen and (max-width: 320px) {
-    #bgimage {
-        background-image: url("../../assets/images/jumpsmall.jpg");
-    }
+img{
+    position:fixed;
+    right:0;
 }
 
 #blogface {
   color: #fff;
-  font-size: 7vw;
+  font-size: 6vw;
   text-align: center;
 }
 
@@ -25,9 +47,9 @@ body {
   text-align: center;
 }
 
-#welcome-h1 {
+#welcome {
   color: #fff;
-  font-size: 4.0vh;
+  font-size: 4.0vw;
   text-align: center;
 }
 
