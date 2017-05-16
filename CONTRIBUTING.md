@@ -4,14 +4,18 @@
 
 1. Clone the repository to your local machine using `git clone`.
 
-### Starting a new Feature/Fix
+### Before you begin a NEW feature/fix
 
 1. Ensure your local `master` branch is up to date with the `master` branch on GitHub by running `git pull origin master`.
 2. Checkout the `master` branch. All new features/fixes should be created off of `master`.
 3. Create a new branch for your feature/fix using `git checkout -b branch-name-here`.
 4. Follow good commit practices to track the build-out of the new feature/fix. Add and commit changed files using `git add` and `git commit`.
 
-### Preparing a Pull Request
+### If there is a MERGE on GitHub when you have a feature in progress
+1. Update your local `master` branch so it reflects the current version in GitHub by running `git pull origin master`
+2. Checkout your feature branch (if you are not on it already) and run `git rebase master`. Your feature branch now includes all the most recent changes to `master`
+
+### Before pushing a completed feature to GitHub
 1. Run `git checkout master` and `git pull --rebase origin master` to make sure that your `master` branch incorporates any updates that were made on the repo on GitHub.
 2. Run `git checkout my-feature-branch` and `git rebase master` to rebase your new feature on top of the (updated) `master` branch.
 3. Validate you have completed ALL checks included in the Checklist outlined below. If the new feature touches the Client, complete ALL checks included in the Contributing file of the Client repo, as well.
