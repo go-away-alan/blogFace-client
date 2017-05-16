@@ -3,18 +3,19 @@
 
 <head>
   <meta charset="utf-8">
+
+  <!-- Link to CSS stylesheet specific to page templates -->
+  <link rel="stylesheet" type="text/css" href="templates.css">
+  <link href="https://fonts.googleapis.com/css?family=Cantarell" rel="stylesheet">
   <title>test</title>
 
   <!-- CDN to Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
-  <link rel="stylesheet" type="text/css" href="templates.scss">
+
+
 </head>
 
 <body>
-  <div>
-    <i style="display:inline" class="fa fa-envelope" aria-hidden="true"></i>
-    <h5 style="display:inline" contenteditable="true">example@email.com</h5>
-  </div>
   <div id="template-1-header" contenteditable="true">
     <h1>Name</h1>
   </div>
@@ -25,6 +26,10 @@
     <p>
       About me..
     </p>
+  </div>
+  <div id="template-1-footer">
+    <i class="fa fa-envelope" aria-hidden="true"></i>
+    <h5 id="template-1-email-text" contenteditable="true">example@email.com</h5>
   </div>
 </body>
 
