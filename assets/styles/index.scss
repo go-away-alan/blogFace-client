@@ -44,6 +44,14 @@ img{
   min-height: 490px;
 }
 
+.pages-container {
+  background-color: orange;
+}
+
+.blogposts-container {
+  background-color: orange;
+}
+
 @media (max-width: 300px) {
   body {
     background-color: #000;
