@@ -3,6 +3,12 @@
 const api = require('./api')
 const ui = require('./ui')
 
+const showTemplate1 = function (event) {
+  event.preventDefault()
+  $('#page-template-1-modal').show()
+  $('#submit-template-1-button').on('click', scrapeHtml)
+}
+
 const scrapeHtml = function (event) {
   event.preventDefault()
   const iframe = $('#template-1-iframe').contents()
@@ -30,12 +36,6 @@ const scrapeHtml = function (event) {
     .catch(ui.createPageFailure)
 }
 
-const showTemplate1 = function (event) {
-  event.preventDefault()
-  $('#page-template-1-modal').show()
-  $('#submit-template-1-button').on('click', scrapeHtml)
-}
-
 const hideTemplate1 = function (event) {
   event.preventDefault()
   const iframe = document.getElementById('template-1-iframe')
@@ -47,6 +47,16 @@ const hideTemplate1 = function (event) {
 const addHandlers = () => {
   $('#display-page-template-1').on('click', showTemplate1)
   $('#cancel-template-1-button').on('click', hideTemplate1)
+  $('#id-form').on('submit', onGetPage)
+}
+
+const onGetPage = function () {
+  const id = $('#id-field').val()
+  console.log('id is ', id)
+  event.preventDefault()
+  api.getPage(id)
+  .then(ui.getPageSuccess)
+  .catch(ui.getPageFailure)
 }
 
 module.exports = {

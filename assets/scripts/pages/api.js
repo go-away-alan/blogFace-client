@@ -3,6 +3,16 @@
 const config = require('../config')
 const store = require('../store')
 
+const getPage = (id) => {
+  return $.ajax({
+    url: config.apiOrigin + '/pages/' + id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const createPage = (data) => {
   console.log('ajax data is', data)
   return $.ajax({
@@ -16,5 +26,6 @@ const createPage = (data) => {
 }
 
 module.exports = {
-  createPage
+  createPage,
+  getPage
 }
