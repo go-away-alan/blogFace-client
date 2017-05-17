@@ -46,6 +46,15 @@ const closeModal = function () {
   $('#signin-form').trigger('reset')
 }
 
+const hideAboutShowSignin = function () {
+  $('#about-modal').modal('hide')
+}
+
+const hideSigninShowSignup = function () {
+  $('#signin-modal').modal('hide')
+  $('#signup-modal').modal('show')
+}
+
 const addHandlers = () => {
   $('#signup-form').on('submit', onSignUp)
   $('#signin-form').on('submit', onSignIn)
@@ -54,6 +63,8 @@ const addHandlers = () => {
   $('#signup-close').on('click', closeModal)
   $('#signin-close').on('click', closeModal)
   $('#changepassword-close').on('click', closeModal)
+  $('#getStartedWithinAboutModal-button').on('click', hideAboutShowSignin)
+  $('#signupWithinSigninModal-button').on('click', hideSigninShowSignup)
 }
 
 module.exports = {
