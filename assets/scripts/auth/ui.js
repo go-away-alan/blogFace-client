@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store')
+const blogpostEvents = require('../blogposts/blogpost-events.js')
 
 const signUpSuccess = (data) => {
   console.log('signUpSuccess ran and data is ', data)
@@ -20,6 +21,7 @@ const signInSuccess = (data) => {
   $('#signin-error').hide()
   $('#landing-page-content').hide()
   $('#dashboard, .dash-container').show()
+  blogpostEvents.onGetBlogpost()
 }
 
 const signInFailure = (error) => {

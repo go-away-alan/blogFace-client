@@ -1,0 +1,15 @@
+{{#each blogposts as |blogpost|}}
+
+<div data-id="{{blogpost.id}}" class='one-blogpost'>
+  <div>
+    <h2>{{blogpost.blogpostTitle}}</h2>
+  </div>
+  <div>
+    <p>{{blogpost.blogpostContent}}</p>
+  </div>
+  <div>
+      {{blogpost.created_at}}
+  </div>
+</div>
+
+{{/each}}
