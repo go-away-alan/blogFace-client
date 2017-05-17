@@ -18,6 +18,7 @@ const signInSuccess = (data) => {
   console.log('sign in ran and data is ', data)
   $('#signin-modal').modal('hide')
   $('#signin-error').hide()
+  $('#landing-page-content').hide()
 }
 
 const signInFailure = (error) => {
@@ -40,6 +41,8 @@ const signOutSuccess = (data) => {
   store.user = null
   console.log('sign in ran and data is ', data)
   $('#signout-modal').modal('hide')
+  $('#landing-page-content').show()
+  $('#dashboard').hide()
 }
 
 const signOutFailure = (error) => {
