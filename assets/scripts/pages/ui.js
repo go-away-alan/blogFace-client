@@ -24,6 +24,7 @@ const createPageFailure = function (error) {
 const getPageSuccess = function (data) {
   console.log('data is ', data)
   $('#page-template-1-edit-modal').show()
+  $('#create-page-1-edit-title').val(data.page.pageTitle)
   const showPageHtml = displaySinglePageTemplate({ page: data.page })
   $('#page-1-template-edit').append(showPageHtml)
 }
