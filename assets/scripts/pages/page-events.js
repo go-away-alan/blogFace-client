@@ -9,9 +9,14 @@ const showTemplate1 = function (event) {
   $('#submit-template-1-button').on('click', scrapeHtml)
 }
 
+const showTemplate2 = function (event) {
+  event.preventDefault()
+  $('#page-template-2-modal').show()
+  // $('#submit-template-2-button').on('click', scrapeHtml2)
+}
+
 const scrapeHtml = function (event) {
   event.preventDefault()
-  // const iframe = $('#template-1-iframe').contents()
   const data = {}
   data.page = {}
   const pageTitle = $('#create-page-1-title').val()
@@ -52,6 +57,20 @@ const hideTemplate1 = function (event) {
   $('#page-template-1-modal').hide()
 }
 
+const resetTemplate2Fields = function () {
+  $('#template-2-header').text('Header')
+  $('#template-2-sub-header').text('Sub-Header')
+  $('#template-2-about').text('About me..')
+  $('#template-2-more').text('More info..')
+  $('#template-2-email').text('example@email.com')
+}
+
+const hideTemplate2 = function (event) {
+  event.preventDefault()
+  resetTemplate2Fields()
+  $('#page-template-2-modal').hide()
+}
+
 const hideTemplate1Edit = function (event) {
   event.preventDefault()
   $('#edit-container').remove()
@@ -69,7 +88,9 @@ const onGetPage = function () {
 
 const addHandlers = () => {
   $('#display-page-template-1').on('click', showTemplate1)
+  $('#display-page-template-2').on('click', showTemplate2)
   $('#cancel-template-1-button').on('click', hideTemplate1)
+  $('#cancel-template-2-button').on('click', hideTemplate2)
   $('#id-form').on('submit', onGetPage)
   $('#cancel-template-1-edit-button').on('click', hideTemplate1Edit)
 }
