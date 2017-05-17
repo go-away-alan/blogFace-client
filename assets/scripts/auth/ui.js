@@ -19,6 +19,7 @@ const signInSuccess = (data) => {
   $('#signin-modal').modal('hide')
   $('#signin-error').hide()
   $('#landing-page-content').hide()
+  $('#dashboard, .dash-container').show()
 }
 
 const signInFailure = (error) => {
