@@ -297,11 +297,8 @@
 
         <div class="template-picker">
           <h4>Select a Template</h4>
-          <input type="image" value="Template 1" class="template-type-1">
+          <button id="display-page-template-1" type="submit" name="submit" class="template-type-1"></button>
           <input type="image" value="Template 2" class="template-type-2">
-
-          <!-- Temporary button to trigger Page Template 1 Modal  -->
-          <button id="display-page-template-1" type="submit" name="submit" value="Page Template 1" class="mdl-button">Page Template 1</button>
 
           <!-- Page Tempate 1 Edit Modal -->
           <div class="modal fade in" id="page-template-1-edit-modal" tabindex="-1" role="dialog" style="display:none">
@@ -310,18 +307,13 @@
                 <div>
                   <input type="text" name="page[title]" maxlength="50" id="create-page-1-edit-title" placeholder="Page Title">
                 </div>
-                <div class="edit-modal-body">
-                  <div id="page-1-template-edit">
-                  </div>
-                  <div class="mdl-dialog__actions">
-                    <button id="submit-template-1-edit-button" type="submit" name="submit" value="Submit Template 1" class="mdl-button">Submit</button>
-                    <button id="cancel-template-1-edit-button" type="button" class="mdl-button">Cancel</button>
-                  </div>
+                <div class="mdl-dialog__actions">
+                  <button id="submit-template-1-edit-button" type="submit" name="submit" value="Submit Template 1" class="mdl-button">Submit</button>
+                  <button id="cancel-template-1-edit-button" type="button" class="mdl-button">Cancel</button> >>>>>>> Enable the template button on the front end to trigger create modal. Removed the temporary button.
                 </div>
               </div>
             </div>
           </div>
-
 
           <!-- Get Page by ID -->
           <form id="id-form">
@@ -346,16 +338,19 @@
       </div>
       <!-- End pages-container -->
 
-    <div class="blogposts-container col-xs-8"> <!-- Blogposts container -->
-      <h2>blogPosts</h2>
-      <p>Insert our really cool blogposts info here.</p>
-      <br>
+      <div class="blogposts-container col-xs-8">
+        <!-- Blogposts container -->
+        <h2>blogPosts</h2>
+        <p>Insert our really cool blogposts info here.</p>
+        <br>
 
-      <h4>My Created blogPosts</h4>
-      <div class="blogpost-content">
+        <h4>My Created blogPosts</h4>
+        <div class="blogpost-content">
 
-      </div> <!-- End page-content -->
-    </div> <!-- End blogposts-container -->
+        </div>
+        <!-- End page-content -->
+      </div>
+      <!-- End blogposts-container -->
 
     </div>
     <!-- End dash-container -->
