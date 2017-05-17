@@ -45,10 +45,10 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#signup-modal" data-toggle="modal" data-target="#signup-modal">Sign Up</a></li>
-              <li><a href="#signin-modal" data-toggle="modal" data-target="#signin-modal">Sign In</a></li>
-              <li><a href="#changepassword-modal" data-toggle="modal" data-target="#changepassword-modal">Change Password</a></li>
-              <li><a href="#signout-modal" data-toggle="modal" data-target="#signout-modal">Sign Out</a></li>
+              <li class="signup-menu-item"><a href="#signup-modal" data-toggle="modal" data-target="#signup-modal">Sign Up</a></li>
+              <li class="signin-menu-item"><a href="#signin-modal" data-toggle="modal" data-target="#signin-modal">Sign In</a></li>
+              <li class="changepassword-menu-item"><a href="#changepassword-modal" data-toggle="modal" data-target="#changepassword-modal">Change Password</a></li>
+              <li id="signout-menu-item"><a href="#">Sign Out</li>
             </ul>
           </li>
         </ul>
@@ -201,37 +201,6 @@
   <!-- /.modal -->
 
   <!--end changepassword modal-->
-
-
-  <!--begin signout modal-->
-
-  <div class="modal fade" id="signout-modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Sign Out</h4>
-        </div>
-        <div class="modal-body">
-          <!--begin signout form-->
-          <form id="sign-out">
-            <fieldset>
-              <input type="submit" class="btn btn-primary" id="signoff" name="submit" value="Sign out!">
-            </fieldset>
-          </form>
-          <!--end signout form-->
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-  </div>
-  <!-- /.modal -->
-
-  <!--end signout modal-->
-
 
 
 
