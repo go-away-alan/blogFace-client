@@ -63,7 +63,7 @@ img{
 }
 
 // Settings for page template modal
-.modal-body {
+#page-1-template-default, #page-1-template-edit {
   max-width: 600px;
   min-height: 550px;
 }
@@ -78,6 +78,26 @@ img{
 
 .blogposts-container {
   background-color: orange;
+}
+
+#template-1-header {
+  border-bottom: black 1px solid;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#template-1-sub-header {
+  font-size: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+#template-1-footer {
+  text-align: center;
+}
+
+#template-1-email-text {
+  margin: 0;
 }
 
 // @media (max-width: 300px) {
