@@ -44,12 +44,6 @@ const hideTemplate1 = function (event) {
   $('#page-template-1-modal').hide()
 }
 
-const addHandlers = () => {
-  $('#display-page-template-1').on('click', showTemplate1)
-  $('#cancel-template-1-button').on('click', hideTemplate1)
-  $('#id-form').on('submit', onGetPage)
-}
-
 const onGetPage = function () {
   const id = $('#id-field').val()
   console.log('id is ', id)
@@ -57,6 +51,12 @@ const onGetPage = function () {
   api.getPage(id)
   .then(ui.getPageSuccess)
   .catch(ui.getPageFailure)
+}
+
+const addHandlers = () => {
+  $('#display-page-template-1').on('click', showTemplate1)
+  $('#cancel-template-1-button').on('click', hideTemplate1)
+  $('#id-form').on('submit', onGetPage)
 }
 
 module.exports = {

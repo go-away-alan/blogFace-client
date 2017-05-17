@@ -15,11 +15,13 @@ const createPageFailure = function (error) {
 
 const getPageSuccess = function (data) {
   console.log('data is ', data)
-  const iframe = document.getElementById('get-iframe')
-  // reloads the iframe and clears fields to the template is fresh
-  iframe.src += ''
+  $('#page-template-1-edit-modal').show()
+  const iframe = $('#template-1-edit-iframe').contents()
+  $('#page-1-template-default').hide()
+  console.log('iframe content are ', iframe)
   const showPageHtml = displaySinglePageTemplate({ page: data.page })
-  $('#get-page-display').append(showPageHtml)
+  iframe.find('#get-page-display').append(showPageHtml)
+  // reloads the iframe and clears fields to the template is fresh
 }
 
 const getPageFailure = function (error) {
