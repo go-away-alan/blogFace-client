@@ -7,31 +7,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 //     // background-position: right 1;
 // }
 
-@media (max-width: 300px) {
-  body {
-    background-color: #000;
-    background-image: url("../../assets/images/jumpsmall.jpg");
-  }
-}
-@media (min-width: 301px) and (max-width: 600px) {
-  body {
-    background-color: #000;
-    background-image: url("../../assets/images/jump.jpg");
-  }
-}
-@media (min-width: 601px) and (max-width: 768px) {
-  body {
-    background-color: #000;
-    background-image: url("../../assets/images/jump.jpg");
-  }
-}
-@media (min-width: 769px) {
-  body {
-    background-color: #000;
-    background-image: url("../../assets/images/jump.jpg");
-  }
-}
-
 img{
     position:fixed;
     right:0;
@@ -67,4 +42,29 @@ img{
 
 #template-1-iframe {
   min-height: 490px;
+}
+
+@media (max-width: 300px) {
+  body {
+    background-color: #000;
+    background-image: url("../../assets/images/jumpsmall.jpg");
+  }
+}
+@media (min-width: 301px) and (max-width: 600px) {
+  body {
+    background-color: #000;
+    background-image: url("../../assets/images/jump.jpg");
+  }
+}
+@media (min-width: 601px) and (max-width: 768px) {
+  body {
+    background-color: #000;
+    background-image: url("../../assets/images/jump.jpg");
+  }
+}
+@media (min-width: 769px) {
+  body {
+    background-color: #000;
+    background-image: url("../../assets/images/jump.jpg");
+  }
 }

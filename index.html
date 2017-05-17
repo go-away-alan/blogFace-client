@@ -62,19 +62,17 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title">Welcome to blogFace!</h4>
         </div>
         <div class="modal-body">
           <p>You are just a few steps away from creating your own blog and web space! It's entirely free and all you need is an email address to get started. Sign up now and find out how easy it is to build your own site!
             <br><br>
-            <center><a href="#signin-modal" data-toggle="modal" data-target="#signin-modal"><button type="button" class="btn btn-success btn-lg">Get Started</button></a>
+            <center><a href="#signin-modal" data-toggle="modal" data-target="#signin-modal"><button type="button" id="getStartedWithinAboutModal-button" class="btn btn-success btn-lg">Get Started</button></a>
               <center>
           </p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         </div>
       </div>
       <!-- /.modal-content -->
@@ -93,7 +91,6 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
           <h4 class="modal-title">Sign Up</h4>
         </div>
         <div class="modal-body">
@@ -104,7 +101,7 @@
           <!--begin signup form-->
           <form id="signup-form">
             <fieldset>
-              <legend></legend>
+              <legend>Please enter an email address and password.</legend>
               <input type="text" name="credentials[email]" id="signup-email" placeholder="Enter Email">
               <input type="password" name="credentials[password]" id="signup-password" placeholder="Enter Password">
               <input type="password" name="credentials[password_confirmation]" id="signup-passwordconfirm" placeholder="Confirm password">
@@ -115,7 +112,6 @@
         </div>
         <div class="modal-footer">
           <button id="signup-close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         </div>
       </div>
       <!-- /.modal-content -->
@@ -133,7 +129,6 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title">Sign In</h4>
         </div>
         <div class="modal-body">
@@ -148,16 +143,14 @@
               <input type="text" name="credentials[email]" id="sign-in email" placeholder="Enter Email">
               <input type="password" name="credentials[password]" id="sign-in password" placeholder="Enter Password">
               <input type="submit" name="submit" value="Sign in!">
-              <br><br>
-              <p>Don't yet have an account? Please <a href="#signup-modal" data-toggle="modal" data-target="#signup-modal">Sign Up</a> here!</p>
-
+              <br><br><br>
+              <p>Don't yet have an account? Please <button id="signupWithinSigninModal-button" type="button" class="btn btn-default" data-dismiss="modal">Sign Up</button></p>
             </fieldset>
           </form>
           <!--end signin form-->
         </div>
         <div class="modal-footer">
           <button id="signin-close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         </div>
       </div>
       <!-- /.modal-content -->
@@ -175,12 +168,10 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title">Change Password</h4>
         </div>
         <div class="modal-body">
           <div class="alert alert-danger alert-dismissible" id='changepw-error' role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <strong>What the....</strong> Change password failed. Try again.
           </div>
           <!--begin changepassword form-->
@@ -196,7 +187,6 @@
         </div>
         <div class="modal-footer">
           <button id="changepassword-close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         </div>
       </div>
       <!-- /.modal-content -->
@@ -214,7 +204,6 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title">Sign Out</h4>
         </div>
         <div class="modal-body">
@@ -276,6 +265,11 @@
 
   <!-- Temporary button to trigger Page Template 1 Modal  -->
   <button id="display-page-template-1" type="submit" name="submit" value="Page Template 1" class="mdl-button">Page Template 1</button>
+
+<div id="dashboard">
+<p>Some wicked cool stuff goes here!</p>
+</div>
+
 
 </body>
 
