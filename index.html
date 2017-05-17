@@ -281,25 +281,6 @@
     </div>
   </div>
 
-  <!-- Temporary button to trigger Page Template 1 Modal  -->
-  <button id="display-page-template-1" type="submit" name="submit" value="Page Template 1" class="mdl-button">Page Template 1</button>
-
-  <!-- Page Tempate 1 Edit Modal -->
-  <div class="modal fade in" id="page-template-1-edit-modal" tabindex="-1" role="dialog" style="display:none">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-body">
-          <div id="page-1-template-edit">
-          </div>
-          <div class="mdl-dialog__actions">
-            <button id="submit-template-1-edit-button" type="submit" name="submit" value="Submit Template 1" class="mdl-button">Submit</button>
-            <button id="cancel-template-1-edit-button" type="button" class="mdl-button">Cancel</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- This is the beginning of our dashboard. -->
 <div id="dashboard">
   <div class="dash-container col-xs-12"> <!-- This container envelops our pages and blogpost containers -->
@@ -313,6 +294,33 @@
         <h4>Select a Template</h4>
         <input type="image" value="Template 1" class="template-type-1">
         <input type="image" value="Template 2" class="template-type-2">
+
+        <!-- Temporary button to trigger Page Template 1 Modal  -->
+        <button id="display-page-template-1" type="submit" name="submit" value="Page Template 1" class="mdl-button">Page Template 1</button>
+
+        <!-- Page Tempate 1 Edit Modal -->
+        <div class="modal fade in" id="page-template-1-edit-modal" tabindex="-1" role="dialog" style="display:none">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <div id="page-1-template-edit">
+                </div>
+                <div class="mdl-dialog__actions">
+                  <button id="submit-template-1-edit-button" type="submit" name="submit" value="Submit Template 1" class="mdl-button">Submit</button>
+                  <button id="cancel-template-1-edit-button" type="button" class="mdl-button">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Get Page by ID -->
+        <form id="id-form">
+          ID:<br>
+          <input id="id-field" type="text" name="id">
+          <input type="submit" value="Submit">
+        </form>
+
       </div> <!-- End template-picker -->
       <br>
 
@@ -344,12 +352,6 @@
     </div>
     <!-- End dash-container -->
 </div>
-
-  <form id="id-form">
-    ID:<br>
-    <input id="id-field" type="text" name="id">
-    <input type="submit" value="Submit">
-  </form>
 
     <!-- Creation of bottom navbar -->
   <nav id="footerid" class="navbar navbar-inverse navbar-fixed-bottom">
