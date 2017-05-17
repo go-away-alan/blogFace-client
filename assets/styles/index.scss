@@ -72,12 +72,60 @@ img{
   min-height: 490px;
 }
 
+// This is for dashboard styling
+#dashboard {
+  background-color: blue;
+  min-height: 1000px;
+  padding: auto;
+  max-width: 100%;
+}
+
 .pages-container {
-  background-color: orange;
+  background-color: white;
+  min-height: 800px;
+  margin: 10px;
+  margin-right: 5px;
+  max-width: 40%;
 }
 
 .blogposts-container {
-  background-color: orange;
+  background-color: white;
+  min-height: 800px;
+  margin-left: 5px;
+  margin: 10px;
+  max-width: 60%;
+}
+
+.template-type-1 {
+  height: 12em;
+  background-image: url("../../assets/images/kitten.jpg");
+  background-size: cover;
+  margin: 5px;
+  border: 1px solid black;
+  width: 100%;
+}
+
+.template-type-2 {
+  height: 12em;
+  background-image: url("../../assets/images/kitten.jpg");
+  background-size: cover;
+  margin: 5px;
+  border: 1px solid black;
+  width: 100%;
+}
+
+.page-content {
+  background-color: yellow;
+  min-height: 100px;
+  margin: 5px;
+  border: 1px solid black;
+}
+
+.blogpost-content {
+  background-color: yellow;
+  min-height: 600px;
+  margin: 5px;
+  border: 1px solid black;
 }
 
 #template-1-header {
