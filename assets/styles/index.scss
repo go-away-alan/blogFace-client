@@ -62,5 +62,9 @@ img{
 // Settings for page template modal
 .modal-body {
   max-width: 600px;
-  max-height: 600px;
+  min-height: 550px;
+}
+
+#template-1-iframe {
+  min-height: 490px;
 }
