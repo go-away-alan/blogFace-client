@@ -262,6 +262,9 @@
   <div class="modal fade in" id="page-template-1-modal" tabindex="-1" role="dialog" style="display:none">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
+        <div>
+          <input type="text" name="page[title]" maxlength="50" id="create-page-1-title" placeholder="Page Title">
+        </div>
         <div class="modal-body">
           <div id="page-1-template-default">
             <div id="template-1-header" contenteditable="true">Header</div>
@@ -282,83 +285,98 @@
   </div>
 
   <!-- This is the beginning of our dashboard. -->
-<div id="dashboard">
-  <div class="dash-container col-xs-12"> <!-- This container envelops our pages and blogpost containers -->
-    <p>I'm a container!</p>
-    <div class="pages-container col-xs-4"> <!-- Pages container -->
-      <h2>Pages</h2>
-      <p>Insert our really cool pages info here.</p>
-      <br>
+  <div id="dashboard">
+    <div class="dash-container col-xs-12">
+      <!-- This container envelops our pages and blogpost containers -->
+      <p>I'm a container!</p>
+      <div class="pages-container col-xs-4">
+        <!-- Pages container -->
+        <h2>Pages</h2>
+        <p>Insert our really cool pages info here.</p>
+        <br>
 
-      <div class="template-picker">
-        <h4>Select a Template</h4>
-        <input type="image" value="Template 1" class="template-type-1">
-        <input type="image" value="Template 2" class="template-type-2">
+        <div class="template-picker">
+          <h4>Select a Template</h4>
+          <input type="image" value="Template 1" class="template-type-1">
+          <input type="image" value="Template 2" class="template-type-2">
 
-        <!-- Temporary button to trigger Page Template 1 Modal  -->
-        <button id="display-page-template-1" type="submit" name="submit" value="Page Template 1" class="mdl-button">Page Template 1</button>
+          <!-- Temporary button to trigger Page Template 1 Modal  -->
+          <button id="display-page-template-1" type="submit" name="submit" value="Page Template 1" class="mdl-button">Page Template 1</button>
 
-        <!-- Page Tempate 1 Edit Modal -->
-        <div class="modal fade in" id="page-template-1-edit-modal" tabindex="-1" role="dialog" style="display:none">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-body">
-                <div id="page-1-template-edit">
+          <!-- Page Tempate 1 Edit Modal -->
+          <div class="modal fade in" id="page-template-1-edit-modal" tabindex="-1" role="dialog" style="display:none">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div>
+                  <input type="text" name="page[title]" maxlength="50" id="create-page-1-edit-title" placeholder="Page Title">
                 </div>
-                <div class="mdl-dialog__actions">
-                  <button id="submit-template-1-edit-button" type="submit" name="submit" value="Submit Template 1" class="mdl-button">Submit</button>
-                  <button id="cancel-template-1-edit-button" type="button" class="mdl-button">Cancel</button>
+                <div class="edit-modal-body">
+                  <div id="page-1-template-edit">
+                  </div>
+                  <div class="mdl-dialog__actions">
+                    <button id="submit-template-1-edit-button" type="submit" name="submit" value="Submit Template 1" class="mdl-button">Submit</button>
+                    <button id="cancel-template-1-edit-button" type="button" class="mdl-button">Cancel</button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
+
+          <!-- Get Page by ID -->
+          <form id="id-form">
+            ID:<br>
+            <input id="id-field" type="text" name="id">
+            <input type="submit" value="Submit">
+          </form>
+
         </div>
+        <!-- End template-picker -->
+        <br>
 
-        <!-- Get Page by ID -->
-        <form id="id-form">
-          ID:<br>
-          <input id="id-field" type="text" name="id">
-          <input type="submit" value="Submit">
-        </form>
-
-      </div> <!-- End template-picker -->
-      <br>
-
-      <div class="page-content-displayer">
-        <h4>My Created Pages</h4>
-        <div class="page-content">
-          <p>Woah there's so much stuff here!</p>
-          <iframe id="get-iframe" src="../assets/templates/page-template-1.html" width="100%" height="90%" frameborder="0" scrolling="yes">
+        <div class="page-content-displayer">
+          <h4>My Created Pages</h4>
+          <div class="page-content">
+            <p>Woah there's so much stuff here!</p>
+            <iframe id="get-iframe" src="../assets/templates/page-template-1.html" width="100%" height="90%" frameborder="0" scrolling="yes">
             <p>
               iframes not supported
             </p>
           </iframe>
-        </div> <!-- End page-content -->
-      </div> <!-- End page-content-displayer -->
+          </div>
+          <!-- End page-content -->
+        </div>
+        <!-- End page-content-displayer -->
 
-    </div> <!-- End pages-container -->
+      </div>
+      <!-- End pages-container -->
 
-    <div class="blogposts-container col-xs-8"> <!-- Blogposts container -->
-      <h2>blogPosts</h2>
-      <p>Insert our really cool blogposts info here.</p>
-      <br>
+      <div class="blogposts-container col-xs-8">
+        <!-- Blogposts container -->
+        <h2>blogPosts</h2>
+        <p>Insert our really cool blogposts info here.</p>
+        <br>
 
-      <h4>My Created blogPosts</h4>
-      <div class="blogpost-content">
-        <p>Woah there's so much stuff here!</p>
-      </div> <!-- End page-content -->
-    </div> <!-- End blogposts-container -->
+        <h4>My Created blogPosts</h4>
+        <div class="blogpost-content">
+          <p>Woah there's so much stuff here!</p>
+        </div>
+        <!-- End page-content -->
+      </div>
+      <!-- End blogposts-container -->
 
     </div>
     <!-- End dash-container -->
-</div>
+  </div>
 
-    <!-- Creation of bottom navbar -->
+  <!-- Creation of bottom navbar -->
   <nav id="footerid" class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="nav-container">
       <p class="navbar-text pull-right">Go Away Alan Enterprises</p>
-    </div> <!-- End nav-container -->
-  </nav> <!-- End bottom navbar -->
+    </div>
+    <!-- End nav-container -->
+  </nav>
+  <!-- End bottom navbar -->
 
 </body>
 

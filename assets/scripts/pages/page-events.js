@@ -14,6 +14,8 @@ const scrapeHtml = function (event) {
   // const iframe = $('#template-1-iframe').contents()
   const data = {}
   data.page = {}
+  const pageTitle = $('#create-page-1-title').val()
+  data.page.pageTitle = pageTitle
   const header = $('#template-1-header').text()
   console.log('header is ', header)
   // strip html tags from text - safety against injection
