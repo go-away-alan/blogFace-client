@@ -255,9 +255,6 @@
   <!--end landing page content div-->
 
 
-
-
-
   <!-- Create Modal for Page Template 1 -->
   <div class="modal fade in" id="page-template-1-modal" tabindex="-1" role="dialog" style="display:none">
     <div class="modal-dialog" role="document">
@@ -284,6 +281,39 @@
     </div>
   </div>
 
+  <!-- Create Modal for Page Template 2 -->
+  <div class="modal fade in" id="page-template-2-modal" tabindex="-1" role="dialog" style="display:none">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div>
+          <input type="text" name="page[title]" maxlength="50" id="create-page-2-title" placeholder="Page Title">
+        </div>
+        <div class="modal-body">
+          <div id="page-2-template-default">
+            <div id="template-2-header" contenteditable="true">Header</div>
+            <div id="template-2-sub-header" contenteditable="true">Sub-Header</div>
+            <div class="row">
+              <div class="col-xs-6" id="template-header" contenteditable="true">About me..</div>
+              <div class="col-xs-6" id="template-header-2" contenteditable="true">More info..</div>
+            </div>
+            <div class="row">
+              <div class="col-xs-6" id="template-2-about" contenteditable="true">About me..</div>
+              <div class="col-xs-6" id="template-2-more" contenteditable="true">More info..</div>
+            </div>
+            <div id="template-2-footer">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <div id="template-2-email" contenteditable="true">example@email.com</div>
+            </div>
+          </div>
+          <div class="mdl-dialog__actions">
+            <button id="submit-template-2-button" type="submit" name="submit" value="Submit Template 2" class="mdl-button">Submit</button>
+            <button id="cancel-template-2-button" type="button" class="mdl-button">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- This is the beginning of our dashboard. -->
   <div id="dashboard">
     <div class="dash-container col-xs-12">
@@ -292,13 +322,11 @@
       <div class="pages-container col-xs-4">
         <!-- Pages container -->
         <h2>Pages</h2>
-        <p>Insert our really cool pages info here.</p>
-        <br>
 
         <div class="template-picker">
-          <h4>Select a Template</h4>
+          <h4>Select template to create page</h4>
           <button id="display-page-template-1" type="submit" name="submit" class="template-type-1"></button>
-          <input type="image" value="Template 2" class="template-type-2">
+          <button id="display-page-template-2" type="submit" name="submit" class="template-type-2"></button>
 
           <!-- Page Tempate 1 Edit Modal -->
           <div class="modal fade in" id="page-template-1-edit-modal" tabindex="-1" role="dialog" style="display:none">

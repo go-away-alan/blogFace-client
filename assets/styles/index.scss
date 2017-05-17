@@ -63,7 +63,7 @@ img{
 }
 
 // Settings for page template modal
-#page-1-template-default, #page-1-template-edit {
+#page-1-template-default, #page-1-template-edit, #page-2-template-default, #page-2-template-edit {
   max-width: 600px;
   min-height: 550px;
 }
@@ -108,8 +108,9 @@ img{
 
 .template-type-2 {
   height: 12em;
-  background-image: url("../../assets/images/kitten.jpg");
+  background-image: url("../../assets/images/template-2-preview.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
   margin: 5px;
   border: 1px solid black;
   width: 100%;
@@ -143,6 +144,7 @@ img{
   }
 }
 
+// Page Template 1 Styling
 #template-1-header {
   border-bottom: black 1px solid;
   font-size: 40px;
@@ -163,6 +165,33 @@ img{
   margin: 0;
 }
 
+// Page Template 2 Styling
+#template-2-header {
+  text-align: center;
+  background-color: #FFF4A6;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#template-2-sub-header {
+  text-align: center;
+  font-size: 20px;
+}
+
+#template-2-footer {
+  text-align: center;
+}
+
+#template-2-email-text {
+  margin: 0;
+}
+
+
+#template-header, #template-header-2 {
+  font-weight: bold;
+  font-size: 10;
+  text-align: center;
+}
 // @media (max-width: 300px) {
 //   body {
 //     background-color: #000;
