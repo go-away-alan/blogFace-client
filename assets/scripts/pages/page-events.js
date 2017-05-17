@@ -34,11 +34,19 @@ const showTemplate1 = function (event) {
   event.preventDefault()
   $('#page-template-1-modal').show()
   $('#submit-template-1-button').on('click', scrapeHtml)
-  $('#submit-template-1-button').prop('disabled', false)
+}
+
+const hideTemplate1 = function (event) {
+  event.preventDefault()
+  const iframe = document.getElementById('template-1-iframe')
+  // reloads the iframe and clears fields to the template is fresh
+  iframe.src += ''
+  $('#page-template-1-modal').hide()
 }
 
 const addHandlers = () => {
   $('#display-page-template-1').on('click', showTemplate1)
+  $('#cancel-template-1-button').on('click', hideTemplate1)
 }
 
 module.exports = {
