@@ -4,7 +4,16 @@ body {
 
 #template-1-header {
   border-bottom: black 1px solid;
+  font-size: 40px;
+  font-weight: bold;
 }
+
+#template-1-sub-header {
+  font-size: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 #template-1-footer {
   text-align: center;
 }
