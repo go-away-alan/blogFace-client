@@ -8,17 +8,23 @@ const scrapeHtml = function (event) {
   const iframe = $('#template-1-iframe').contents()
   const data = {}
   data.page = {}
-  const header = iframe.find('#template-1-header-text').html()
-  data.page.header = header
-  const subHeader = iframe.find('#template-1-sub-header-text').html()
-  data.page.subHeader = subHeader
-  const pageContent = iframe.find('#template-1-about-text').html()
-  data.page.pageContent = pageContent
-  const contact = iframe.find('#template-1-email-text').html()
-  data.page.contact = contact
+  const header = iframe.find('#template-1-header').text()
+  // strip html tags from text - safety against injection
+  const strippedHeader = header.replace(/(<([^>]+)>)/ig, '')
+  data.page.header = strippedHeader
+  const subHeader = iframe.find('#template-1-sub-header').text()
+  // strip html tags from text - safety against injection
+  const strippedSubHeader = subHeader.replace(/(<([^>]+)>)/ig, '')
+  data.page.subHeader = strippedSubHeader
+  const pageContent = iframe.find('#template-1-about').text()
+  // strip html tags from text - safety against injection
+  const strippedPageContent = pageContent.replace(/(<([^>]+)>)/ig, '')
+  data.page.pageContent = strippedPageContent
+  const contact = iframe.find('#template-1-email').text()
+  // strip html tags from text - safety against injection
+  const strippedContact = contact.replace(/(<([^>]+)>)/ig, '')
+  data.page.contact = strippedContact
   console.log('data is ', data)
-  // const jsonData = JSON.stringify(data)
-  // console.log(jsonData)
   api.createPage(data)
     .then(ui.createPageSuccess)
     .catch(ui.createPageFailure)
