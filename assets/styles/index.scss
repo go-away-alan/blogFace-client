@@ -5,7 +5,17 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 //     background-color: #000;
 // }
 
-// begin Joni changePassword
+
+// Steve change
+#submit-edit {
+position: initial;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+    background-color: #143757;
+}
 
 html, body {
     padding: 0;
@@ -23,6 +33,8 @@ li li.signout-menu-item {
 #dashboard {
   background-image:none !important;
   display: none;
+  text-align: center;
+  padding-left: 55px;
 }
 
 #landing-page-content {
@@ -82,10 +94,11 @@ img{
 
 // This is for dashboard styling
 #dashboard {
-  background-color: blue;
+  background-color: #143757;
   min-height: 1000px;
   padding: auto;
   max-width: 100%;
+  text-align: center;
 }
 
 .pages-container {
@@ -125,14 +138,14 @@ img{
 }
 
 .page-content {
-  background-color: yellow;
+  background-color: #f9f9f2;
   min-height: 100px;
   margin: 5px;
   border: 1px solid black;
 }
 
 .blogpost-content {
-  background-color: yellow;
+  background-color: #f9f9f2;
   min-height: 600px;
   margin: 5px;
   border: 1px solid black;
@@ -154,7 +167,7 @@ img{
   }
 
   p {
-    text-align: center;
+    text-align: justify;
   }
 }
 
