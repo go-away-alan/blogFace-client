@@ -150,11 +150,26 @@ img{
   width: 100%;
 }
 
+.madePage {
+  max-height: 6em;
+  background-color: #A57299;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 5px;
+  border: .5px solid black;
+  width: 95%;
+  padding: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  vertical-align: middle;
+  color: white;
+}
+
 .page-content {
-  background-color: #f9f9f2;
+  // background-color: #f9f9f2;
   min-height: 100px;
   margin: 5px;
-  border: 1px solid black;
+  // border: 1px solid black;
 }
 
 #create-button {
