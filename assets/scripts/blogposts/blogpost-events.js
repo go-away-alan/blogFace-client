@@ -56,7 +56,7 @@ const onCancelEdit = function () {
 }
 
 const onEditBlog = function (event) {
-  console.log('inside on edit blog')
+  // console.log('inside on edit blog')
   const id = $(this).attr('data-id')
   $('p[data-id=' + id + ']').attr('contenteditable', 'true')
   $('h2[data-id=' + id + ']').attr('contenteditable', 'true')
@@ -82,7 +82,7 @@ const onGetBlogpost = function () {
 const onSubmitCreateBlog = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log(data)
+  // console.log(data)
   api.submitCreateBlog(data)
     .then(ui.submitCreateBlogSuccess)
     .then(api.getBlogposts)
@@ -93,13 +93,13 @@ const onSubmitCreateBlog = function (event) {
     })
     .catch(ui.submitCreateBlogFailure)
   $('#create-form').trigger('reset')
-  console.log('inside onSubmitCreateBlog function on blogpost-events')
+  // console.log('inside onSubmitCreateBlog function on blogpost-events')
 }
 
 const onCreateBlog = function (event) {
   event.preventDefault()
   $('#create-modal').modal('show')
-  console.log('inside onCreateBlog function on blogpost-events')
+  // console.log('inside onCreateBlog function on blogpost-events')
 }
 
 const addHandlers = function () {

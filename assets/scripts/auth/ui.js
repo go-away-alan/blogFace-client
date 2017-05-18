@@ -5,7 +5,7 @@ const blogpostEvents = require('../blogposts/blogpost-events.js')
 const pageEvents = require('../pages/page-events.js')
 
 const signUpSuccess = (data) => {
-  console.log('signUpSuccess ran and data is ', data)
+  // console.log('signUpSuccess ran and data is ', data)
   $('#signup-modal').modal('hide')
   $('#signup-error').hide()
   $('.signout-menu-item').hide()
@@ -22,7 +22,7 @@ const signUpFailure = (error) => {
 const signInSuccess = (data) => {
   store.user = data.user
   pageEvents.onGetPages()
-  console.log('sign in ran and data is ', data)
+  // console.log('sign in ran and data is ', data)
   $('#signin-modal').modal('hide')
   $('#signin-error').hide()
   $('#landing-page-content').hide()
@@ -42,7 +42,7 @@ const signInFailure = (error) => {
 }
 
 const changePasswordSuccess = (data) => {
-  console.log('change password ran and data is ', data)
+  // console.log('change password ran and data is ', data)
   $('#changepassword-modal').modal('hide')
   $('#changepw-error').hide()
 }
@@ -54,7 +54,7 @@ const changePasswordFailure = (error) => {
 
 const signOutSuccess = (data) => {
   store.user = null
-  console.log('sign in ran and data is ', data)
+  // console.log('sign in ran and data is ', data)
   $('.blogpost-content').empty()
   $('#signout-modal').modal('hide')
   $('#landing-page-content').show()
