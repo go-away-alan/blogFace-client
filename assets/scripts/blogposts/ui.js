@@ -30,6 +30,7 @@ const editBlogFailure = (error) => {
 
 const submitCreateBlogSuccess = (data) => {
   console.log('create blog post success and data is ', data)
+  $('#create-modal').modal('hide')
 }
 
 const submitCreateBlogFailure = (error) => {
