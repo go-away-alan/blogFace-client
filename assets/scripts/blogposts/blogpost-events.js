@@ -45,7 +45,7 @@ const onEditBlog = function (event) {
   $('h2[data-id=' + id + ']').attr('contenteditable', 'true')
   $('.one-blogpost[data-id=' + id + ']').css('background-color', 'white')
   const submitEditButtonHtml = submitEditButtonTemplate({})
-  $('#blogpost-container').append(submitEditButtonHtml)
+  $('.blogpost-container[data-id=' + id + ']').append(submitEditButtonHtml)
   $('#submit-edit').on('click', onSubmitEdit)
 }
 
@@ -65,18 +65,26 @@ const onSubmitCreateBlog = function (event) {
   console.log(data)
   api.submitCreateBlog(data)
     .then(ui.submitCreateBlogSuccess)
+    .then(api.getBlogposts)
+    .then(ui.getBlogpostsSuccess)
+    .then(() => {
+      $('.blog-delete-button').on('click', onDeleteBlog)
+      $('.blog-edit-button').on('click', onEditBlog)
+    })
     .catch(ui.submitCreateBlogFailure)
   $('#create-form').trigger('reset')
+  console.log('inside onSubmitCreateBlog function on blogpost-events')
 }
 
 const onCreateBlog = function (event) {
   event.preventDefault()
   $('#create-modal').modal('show')
-  $('#create-form').on('submit', onSubmitCreateBlog)
+  console.log('inside onCreateBlog function on blogpost-events')
 }
 
 const addHandlers = function () {
   $('#create-button').on('click', onCreateBlog)
+  $('#create-form').on('submit', onSubmitCreateBlog)
 }
 
 module.exports = {
