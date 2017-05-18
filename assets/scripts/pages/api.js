@@ -26,7 +26,7 @@ const getPage = (id) => {
 }
 
 const createPage = (data) => {
-  console.log('ajax data is', data)
+  // console.log('ajax data is', data)
   return $.ajax({
     url: config.apiOrigin + '/pages',
     method: 'POST',

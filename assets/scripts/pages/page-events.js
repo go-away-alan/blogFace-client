@@ -44,7 +44,7 @@ const scrapeHtml = function (event) {
   const pageTitle = $('#create-page-1-title').val()
   data.page.pageTitle = pageTitle
   const header = $('#template-1-header').text()
-  console.log('header is ', header)
+  // console.log('header is ', header)
   // strip html tags from text - safety against injection
   const strippedHeader = header.replace(/(<([^>]+)>)/ig, '')
   data.page.header = strippedHeader
@@ -60,7 +60,7 @@ const scrapeHtml = function (event) {
   // strip html tags from text - safety against injection
   const strippedContact = contact.replace(/(<([^>]+)>)/ig, '')
   data.page.contact = strippedContact
-  console.log('data is ', data)
+  // console.log('data is ', data)
   api.createPage(data)
     .then(ui.createPageSuccess)
     .catch(ui.createPageFailure)
@@ -75,7 +75,7 @@ const scrapeHtml2 = function (event) {
   const pageTitle = $('#create-page-2-title').val()
   data.page.pageTitle = pageTitle
   const header = $('#template-2-header').text()
-  console.log('header is ', header)
+  // console.log('header is ', header)
   // strip html tags from text - safety against injection
   const strippedHeader = header.replace(/(<([^>]+)>)/ig, '')
   data.page.header = strippedHeader

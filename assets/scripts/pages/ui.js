@@ -7,7 +7,7 @@ const api = require('./api.js')
 const pageStore = require('../pageStore')
 
 const getPagesSuccess = function (data) {
-  console.log('here are the user pages ', data)
+  // console.log('here are the user pages ', data)
   const pageShower = pageDisplayer({ pages: data.pages })
   $('.page-content').append(pageShower)
   $('.madePage').on('click', onGetPage)
@@ -16,7 +16,7 @@ const getPagesSuccess = function (data) {
 const onGetPage = function (event) {
   event.preventDefault()
   const id = $(this).data('id')
-  console.log('Simon says This ID is', $(this).data('id'))
+  // console.log('Simon says This ID is', $(this).data('id'))
   api.getPage(id)
   .then(getPageSuccess)
   .catch(getPageFailure)
@@ -27,7 +27,7 @@ const getPagesFailure = function (error) {
 }
 
 const createPageSuccess = function (data) {
-  console.log('data is ', data)
+  // console.log('data is ', data)
   resetTemplate1Fields()
   $('#page-template-1-modal').hide()
   $('#page-template-2-modal').hide()
@@ -55,7 +55,7 @@ const createPageFailure = function (error) {
 }
 
 const updateSuccess = function (data) {
-  console.log(data)
+  // console.log(data)
   $('#page-template-1-edit-modal, #page-template-2-edit-modal').hide()
   $('#edit-container').remove()
   $('#submit-template-1-edit-button, #submit-template-2-edit-button').off()
@@ -82,7 +82,7 @@ const onEditPage = function (event) {
 }
 
 const getPageSuccess = function (data) {
-  console.log('data is ', data)
+  // console.log('data is ', data)
   if (data.page.templateType === 1) {
     $('#page-template-1-edit-modal').show()
     $('#edit-page-1-title').val(data.page.pageTitle)
@@ -103,15 +103,15 @@ const getPageSuccess = function (data) {
 
   const templateType = data.page.templateType
   pageStore.templateType = templateType
-  console.log('PAGESTORE TEMP TYPE IS', pageStore.templateType)
+  // console.log('PAGESTORE TEMP TYPE IS', pageStore.templateType)
 }
 
 const showPageHtml = function (data) {
-  console.log('SIMON SAYS DATA IS ', data)
+  // console.log('SIMON SAYS DATA IS ', data)
   if (data.page.templateType === 1) {
     const pageRenderT1 = displaySinglePageTemplate({ page: data.page })
-    console.log('ANDY SAYS showPageHtml IS ', pageRenderT1)
-    console.log('ANDY SAYS DATA IS ', data)
+    // console.log('ANDY SAYS showPageHtml IS ', pageRenderT1)
+    // console.log('ANDY SAYS DATA IS ', data)
     $('#page-1-template-edit').append(pageRenderT1)
     $('#edit-page-1-title').val(data.page.pageTitle)
   } else {
@@ -135,7 +135,7 @@ const scrapeHtml = function () {
   const pageTitle = $('#edit-page-1-title').val()
   data.page.pageTitle = pageTitle
   const header = $('#modal1-edit-header').text()
-  console.log('header is ', header)
+  // console.log('header is ', header)
   // strip html tags from text - safety against injection
   // const strippedHeader = header.replace(/(<([^>]+)>)/ig, '')
   data.page.header = header
@@ -151,13 +151,13 @@ const scrapeHtml = function () {
   // strip html tags from text - safety against injection
   const strippedContact = contact.replace(/(<([^>]+)>)/ig, '')
   data.page.contact = strippedContact
-  console.log('WHAT AM I?', data)
+  // console.log('WHAT AM I?', data)
   api.editPage(data)
     .then(updateSuccess)
     .catch(updateFailure)
   pageStore.id = null
   pageStore.templateType = null
-  console.log('NOW WHAT AM I?', data)
+  // console.log('NOW WHAT AM I?', data)
 }
 
 // Scraptes data for Page Template 2
@@ -168,7 +168,7 @@ const scrapeHtml2 = function () {
   const pageTitle = $('#edit-page-2-title').val()
   data.page.pageTitle = pageTitle
   const header = $('#modal2-edit-header').text()
-  console.log('header is ', header)
+  // console.log('header is ', header)
   // strip html tags from text - safety against injection
   const strippedHeader = header.replace(/(<([^>]+)>)/ig, '')
   data.page.header = strippedHeader
@@ -201,13 +201,13 @@ const scrapeHtml2 = function () {
   // strip html tags from text - safety against injection
   const strippedContact = contact.replace(/(<([^>]+)>)/ig, '')
   data.page.contact = strippedContact
-  console.log('WHAT AM I?', data)
+  // console.log('WHAT AM I?', data)
   api.editPage(data)
     .then(updateSuccess)
     .catch(updateFailure)
   pageStore.id = null
   pageStore.templateType = null
-  console.log('NOW WHAT AM I?', data)
+  // console.log('NOW WHAT AM I?', data)
 }
 
 // Allows you to destroy the page.
@@ -225,11 +225,11 @@ const onDestroyPage = function (event) {
 }
 
 const destroySuccess = function (data) {
-  console.log(data)
+  // console.log(data)
   $('.page-content').empty()
   $('#page-template-1-edit-modal').hide()
   $('#page-template-2-edit-modal').hide()
-  console.log('HI STEEEEVE', pageStore.id)
+  // console.log('HI STEEEEVE', pageStore.id)
   api.getPages(data)
     .then(getPagesSuccess)
     .catch(getPagesSuccess)
