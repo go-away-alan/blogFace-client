@@ -7,12 +7,26 @@ const showTemplate1 = function (event) {
   event.preventDefault()
   $('#page-template-1-modal').show()
   $('#submit-template-1-button').on('click', scrapeHtml)
+  $('#create-page-1-title').on('keyup', function () {
+    if ($('#create-page-1-title').val().length !== 0) {
+      $('#submit-template-1-button').prop('disabled', false)
+    } else {
+      $('#submit-template-1-button').prop('disabled', true)
+    }
+  })
 }
 
 const showTemplate2 = function (event) {
   event.preventDefault()
   $('#page-template-2-modal').show()
   $('#submit-template-2-button').on('click', scrapeHtml2)
+  $('#create-page-2-title').on('keyup', function () {
+    if ($('#create-page-2-title').val().length !== 0) {
+      $('#submit-template-2-button').prop('disabled', false)
+    } else {
+      $('#submit-template-2-button').prop('disabled', true)
+    }
+  })
 }
 
 // Scrapes data for Page Template 1
@@ -75,7 +89,6 @@ const scrapeHtml2 = function (event) {
   // strip html tags from text - safety against injection
   const strippedContact = contact.replace(/(<([^>]+)>)/ig, '')
   data.page.contact = strippedContact
-  console.log('data is ', data)
   api.createPage(data)
     .then(ui.createPageSuccess)
     .catch(ui.createPageFailure)
@@ -85,12 +98,15 @@ const resetTemplate1Fields = function () {
   $('#template-1-sub-header').text('Sub-Header')
   $('#template-1-about').text('About me..')
   $('#template-1-email').text('example@example.com')
+  $('#create-page-1-title').val('')
 }
 
 const hideTemplate1 = function (event) {
   event.preventDefault()
   resetTemplate1Fields()
   $('#page-template-1-modal').hide()
+  $('#submit-template-1-button').off()
+  $('#submit-template-1-button').prop('disabled', true)
 }
 
 const resetTemplate2Fields = function () {
@@ -99,12 +115,15 @@ const resetTemplate2Fields = function () {
   $('#template-2-about').text('About me..')
   $('#template-2-more').text('More info..')
   $('#template-2-email').text('example@email.com')
+  $('#create-page-2-title').val('')
 }
 
 const hideTemplate2 = function (event) {
   event.preventDefault()
   resetTemplate2Fields()
   $('#page-template-2-modal').hide()
+  $('#submit-template-2-button').off()
+  $('#submit-template-2-button').prop('disabled', true)
 }
 
 const hideTemplate1Edit = function (event) {
