@@ -32,10 +32,24 @@ const onSubmitEdit = function (event) {
     .then(() => {
       $('p[data-id=' + id + ']').attr('contenteditable', 'false')
       $('h2[data-id=' + id + ']').attr('contenteditable', 'false')
-      $('.one-blogpost[data-id=' + id + ']').css('background-color', '#f9f9f2')
+      $('.one-blogpost[data-id=' + id + ']').css('border', '1px solid')
+      $('.blog-delete-button[data-id=' + id + ']').show()
+      $('.blog-edit-button[data-id=' + id + ']').show()
       $('#submit-edit').remove()
+      $('#cancel-edit').remove()
     })
     .catch(ui.editBlogFailure)
+}
+
+const onCancelEdit = function () {
+  const id = $(this).prev().prev().attr('data-id')
+  $('p[data-id=' + id + ']').attr('contenteditable', 'false')
+  $('h2[data-id=' + id + ']').attr('contenteditable', 'false')
+  $('.one-blogpost[data-id=' + id + ']').css('border', '1px solid')
+  $('.blog-delete-button[data-id=' + id + ']').show()
+  $('.blog-edit-button[data-id=' + id + ']').show()
+  $('#submit-edit').remove()
+  $('#cancel-edit').remove()
 }
 
 const onEditBlog = function (event) {
@@ -43,10 +57,13 @@ const onEditBlog = function (event) {
   const id = $(this).attr('data-id')
   $('p[data-id=' + id + ']').attr('contenteditable', 'true')
   $('h2[data-id=' + id + ']').attr('contenteditable', 'true')
-  $('.one-blogpost[data-id=' + id + ']').css('background-color', 'white')
+  $('.one-blogpost[data-id=' + id + ']').css('border', '3px solid blue')
   const submitEditButtonHtml = submitEditButtonTemplate({})
   $('.blogpost-container[data-id=' + id + ']').append(submitEditButtonHtml)
+  $('.blog-delete-button[data-id=' + id + ']').hide()
+  $('.blog-edit-button[data-id=' + id + ']').hide()
   $('#submit-edit').on('click', onSubmitEdit)
+  $('#cancel-edit').on('click', onCancelEdit)
 }
 
 const onGetBlogpost = function () {
