@@ -45,7 +45,7 @@ const onEditBlog = function (event) {
   $('h2[data-id=' + id + ']').attr('contenteditable', 'true')
   $('.one-blogpost[data-id=' + id + ']').css('background-color', 'white')
   const submitEditButtonHtml = submitEditButtonTemplate({})
-  $('#blogpost-container').append(submitEditButtonHtml)
+  $('.blogpost-container[data-id=' + id + ']').append(submitEditButtonHtml)
   $('#submit-edit').on('click', onSubmitEdit)
 }
 
