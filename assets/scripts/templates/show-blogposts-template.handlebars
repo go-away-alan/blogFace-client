@@ -1,15 +1,19 @@
 {{#each blogposts as |blogpost|}}
 
-<div data-id="{{blogpost.id}}" class='one-blogpost'>
-  <div>
-    <h2>{{blogpost.blogpostTitle}}</h2>
+<div>
+  <div data-id="{{blogpost.id}}" class='one-blogpost'>
+    <div>
+      <h2 data-id="{{blogpost.id}}">{{blogpost.blogpostTitle}}</h2>
+    </div>
+    <div>
+      <p data-id="{{blogpost.id}}">{{blogpost.blogpostContent}}</p>
+    </div>
+    <div>
+        {{blogpost.created_at}}
+    </div>
   </div>
-  <div>
-    <p>{{blogpost.blogpostContent}}</p>
-  </div>
-  <div>
-      {{blogpost.created_at}}
-  </div>
+  <button type="button" data-id="{{blogpost.id}}" class='btn btn-default blog-edit-button'>Edit Blog</button>
+  <button type="button" data-id="{{blogpost.id}}" class='btn btn-danger blog-delete-button'>Delete Blog</button>
 </div>
 
 {{/each}}

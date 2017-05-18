@@ -12,7 +12,17 @@ const getBlogpostsFailure = (error) => {
   console.log('failed to get the blogposts sorry ', error)
 }
 
+const deleteBlogSuccess = (data) => {
+  console.log('delte blog post success and nothing is returned')
+}
+
+const deleteBlogFailure = (error) => {
+  console.log('delete blog did not work and error is ', error)
+}
+
 module.exports = {
   getBlogpostsSuccess,
-  getBlogpostsFailure
+  getBlogpostsFailure,
+  deleteBlogSuccess,
+  deleteBlogFailure
 }
