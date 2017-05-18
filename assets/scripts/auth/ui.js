@@ -2,6 +2,7 @@
 
 const store = require('../store')
 const blogpostEvents = require('../blogposts/blogpost-events.js')
+const pageEvents = require('../pages/page-events.js')
 
 const signUpSuccess = (data) => {
   console.log('signUpSuccess ran and data is ', data)
@@ -20,6 +21,7 @@ const signUpFailure = (error) => {
 
 const signInSuccess = (data) => {
   store.user = data.user
+  pageEvents.onGetPages()
   console.log('sign in ran and data is ', data)
   $('#signin-modal').modal('hide')
   $('#signin-error').hide()

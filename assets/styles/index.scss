@@ -157,6 +157,25 @@ img{
   margin: 5px;
 }
 
+.page-title::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: #909;
+}
+.page-title:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #909;
+    opacity: 1;
+}
+.page-title::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #909;
+    opacity: 1;
+}
+.page-title:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #909;
+}
+
 // Page Template 1 Styling
 #template-1-header {
   border-bottom: black 1px solid;
