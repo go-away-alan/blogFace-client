@@ -1,5 +1,6 @@
 'use strict'
-const displaySinglePageTemplate = require('../../templates/load-single-page.handlebars')
+const displaySinglePageTemplate = require('../../templates/load-editable-temp-1.handlebars')
+const displaySinglePageTemplate2 = require('../../templates/load-editable-temp-2.handlebars')
 
 const getPagesSuccess = function (data) {
   console.log('here are the user pages ', data)
@@ -35,11 +36,30 @@ const createPageFailure = function (error) {
 
 const getPageSuccess = function (data) {
   console.log('data is ', data)
-  $('#page-template-1-edit-modal').show()
-  $('#create-page-1-edit-title').val(data.page.pageTitle)
-  const showPageHtml = displaySinglePageTemplate({ page: data.page })
-  $('#page-1-template-edit').append(showPageHtml)
-  $('#edit-page-1-title').val(data.page.pageTitle)
+  if (data.page.templateType === 1) {
+    $('#page-template-1-edit-modal').show()
+    $('#edit-page-1-title').val(data.page.pageTitle)
+    showPageHtml(data)
+  } else {
+    $('#page-template-2-edit-modal').show()
+    $('#edit-page-2-title').val(data.page.pageTitle)
+    showPageHtml(data)
+  }
+}
+
+const showPageHtml = function (data) {
+  console.log('SIMON SAYS DATA IS ', data)
+  if (data.page.templateType === 1) {
+    const pageRenderT1 = displaySinglePageTemplate({ page: data.page })
+    console.log('ANDY SAYS showPageHtml IS ', pageRenderT1)
+    console.log('ANDY SAYS DATA IS ', data)
+    $('#page-1-template-edit').append(pageRenderT1)
+    $('#edit-page-1-title').val(data.page.pageTitle)
+  } else {
+    const pageRenderT2 = displaySinglePageTemplate2({ page: data.page })
+    $('#page-2-template-edit').append(pageRenderT2)
+    $('#edit-page-2-title').val(data.page.pageTitle)
+  }
 }
 
 const getPageFailure = function (error) {

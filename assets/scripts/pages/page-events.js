@@ -136,6 +136,14 @@ const hideTemplate1Edit = function (event) {
   event.preventDefault()
   $('#edit-container').remove()
   $('#page-template-1-edit-modal').hide()
+  $('#create-page-1-title').val('')
+}
+
+const hideTemplate2Edit = function (event) {
+  event.preventDefault()
+  $('#edit-container').remove()
+  $('#page-template-2-edit-modal').hide()
+  $('#create-page-2-title').val('')
 }
 
 const onGetPage = function () {
@@ -154,6 +162,7 @@ const addHandlers = () => {
   $('#cancel-template-2-button').on('click', hideTemplate2)
   $('#id-form').on('submit', onGetPage)
   $('#cancel-template-1-edit-button').on('click', hideTemplate1Edit)
+  $('#cancel-template-2-edit-button').on('click', hideTemplate2Edit)
 }
 
 module.exports = {
