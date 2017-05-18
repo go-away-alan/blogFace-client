@@ -112,6 +112,7 @@ const scrapeHtml2 = function (event) {
     .then(ui.createPageSuccess)
     .catch(ui.createPageFailure)
 }
+
 const resetTemplate1Fields = function () {
   $('#template-1-header').text('Header')
   $('#template-1-sub-header').text('Sub-Header')
@@ -158,15 +159,6 @@ const hideTemplate2Edit = function (event) {
   $('#page-template-2-edit-modal').hide()
   $('#create-page-2-title').val('')
 }
-
-// const onGetPage = function (event) {
-//   const id = $(this).data('id')
-//   console.log('Simon says This ID is', $(this).data('id'))
-//   event.preventDefault()
-//   api.getPage(id)
-//   .then(ui.getPageSuccess)
-//   .catch(ui.getPageFailure)
-// }
 
 const addHandlers = () => {
   $('#display-page-template-1').on('click', showTemplate1)

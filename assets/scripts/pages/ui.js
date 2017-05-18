@@ -4,6 +4,7 @@ const displaySinglePageTemplate2 = require('../../templates/load-editable-temp-2
 const pageDisplayer = require('../../templates/pageDisplayer.handlebars')
 // const pageEvents = require('./page-events.js')
 const api = require('./api.js')
+const pageStore = require('../pageStore')
 
 const getPagesSuccess = function (data) {
   console.log('here are the user pages ', data)
@@ -49,17 +50,48 @@ const createPageFailure = function (error) {
   console.error('ERROR ', error)
 }
 
+const updateSuccess = function (data) {
+  console.log(data)
+  $('#page-template-1-edit-modal, #page-template-2-edit-modal').hide()
+  $('#edit-container').remove()
+  $('#submit-template-1-edit-button, #submit-template-2-edit-button').off()
+}
+
+const updateFailure = function (error) {
+  console.error(error)
+}
+
+// Allows you to edit the page.
+const onEditPage = function (event) {
+  event.preventDefault()
+  // const id = $(this).data('id')
+  const tempStyle = pageStore.templateType
+  if (tempStyle === 1) {
+    scrapeHtml()
+  } else {
+    scrapeHtml2()
+  }
+}
+
 const getPageSuccess = function (data) {
   console.log('data is ', data)
   if (data.page.templateType === 1) {
     $('#page-template-1-edit-modal').show()
     $('#edit-page-1-title').val(data.page.pageTitle)
+    $('#submit-template-1-edit-button').on('click', onEditPage)
     showPageHtml(data)
   } else {
     $('#page-template-2-edit-modal').show()
     $('#edit-page-2-title').val(data.page.pageTitle)
+    $('#submit-template-2-edit-button').on('click', onEditPage)
     showPageHtml(data)
   }
+  const pageStoreId = data.page.id
+  pageStore.id = pageStoreId
+
+  const templateType = data.page.templateType
+  pageStore.templateType = templateType
+  console.log('PAGESTORE TEMP TYPE IS', pageStore.templateType)
 }
 
 const showPageHtml = function (data) {
@@ -79,6 +111,91 @@ const showPageHtml = function (data) {
 
 const getPageFailure = function (error) {
   console.error('ERROR ', error)
+}
+
+// Copy
+
+// Scrapes data for Page Template 1
+const scrapeHtml = function () {
+  const data = {}
+  data.page = {}
+  data.page.templateType = 1
+  const pageTitle = $('#edit-page-1-title').val()
+  data.page.pageTitle = pageTitle
+  const header = $('#modal1-edit-header').text()
+  console.log('header is ', header)
+  // strip html tags from text - safety against injection
+  // const strippedHeader = header.replace(/(<([^>]+)>)/ig, '')
+  data.page.header = header
+  const subHeader = $('#modal1-edit-subheader').text()
+  // strip html tags from text - safety against injection
+  const strippedSubHeader = subHeader.replace(/(<([^>]+)>)/ig, '')
+  data.page.subHeader = strippedSubHeader
+  const pageContent = $('#modal1-edit-about').text()
+  // strip html tags from text - safety against injection
+  const strippedPageContent = pageContent.replace(/(<([^>]+)>)/ig, '')
+  data.page.pageContent = strippedPageContent
+  const contact = $('#modal1-edit-contact').text()
+  // strip html tags from text - safety against injection
+  const strippedContact = contact.replace(/(<([^>]+)>)/ig, '')
+  data.page.contact = strippedContact
+  console.log('WHAT AM I?', data)
+  api.editPage(data)
+    .then(updateSuccess)
+    .catch(updateFailure)
+  pageStore.id = null
+  pageStore.templateType = null
+  console.log('NOW WHAT AM I?', data)
+}
+
+// Scraptes data for Page Template 2
+const scrapeHtml2 = function () {
+  const data = {}
+  data.page = {}
+  data.page.templateType = 2
+  const pageTitle = $('#edit-page-2-title').val()
+  data.page.pageTitle = pageTitle
+  const header = $('#modal2-edit-header').text()
+  console.log('header is ', header)
+  // strip html tags from text - safety against injection
+  const strippedHeader = header.replace(/(<([^>]+)>)/ig, '')
+  data.page.header = strippedHeader
+  const subHeader = $('#modal2-edit-subheader').text()
+  // strip html tags from text - safety against injection
+  const strippedSubHeader = subHeader.replace(/(<([^>]+)>)/ig, '')
+  data.page.subHeader = strippedSubHeader
+  const pageContent = $('#modal2-edit-about').text()
+  // strip html tags from text - safety against injection
+  const strippedPageContent = pageContent.replace(/(<([^>]+)>)/ig, '')
+  data.page.pageContent = strippedPageContent
+  const pageContentMore = $('#modal2-edit-more').text()
+  // strip html tags from text - safety against injection
+  const strippedPageContentMore = pageContentMore.replace(/(<([^>]+)>)/ig, '')
+  data.page.pageContentMore = strippedPageContentMore
+
+  // Bug fix for pageContentMore Column 1
+  const columnHeader1 = $('#modal2-edit-column-header1').text()
+  // strip html tags from text - safety against injection
+  const strippedColumnHeader1 = columnHeader1.replace(/(<([^>]+)>)/ig, '')
+  data.page.columnHeader1 = strippedColumnHeader1
+
+  // Bug fix for pageContentMore Column 2
+  const columnHeader2 = $('#modal2-edit-column-header2').text()
+  // strip html tags from text - safety against injection
+  const strippedColumnHeader2 = columnHeader2.replace(/(<([^>]+)>)/ig, '')
+  data.page.columnHeader2 = strippedColumnHeader2
+
+  const contact = $('#modal2-edit-contact').text()
+  // strip html tags from text - safety against injection
+  const strippedContact = contact.replace(/(<([^>]+)>)/ig, '')
+  data.page.contact = strippedContact
+  console.log('WHAT AM I?', data)
+  api.editPage(data)
+    .then(updateSuccess)
+    .catch(updateFailure)
+  pageStore.id = null
+  pageStore.templateType = null
+  console.log('NOW WHAT AM I?', data)
 }
 
 module.exports = {

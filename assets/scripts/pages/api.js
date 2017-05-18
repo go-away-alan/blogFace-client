@@ -2,6 +2,7 @@
 
 const config = require('../config')
 const store = require('../store')
+const pageStore = require('../pageStore')
 
 // Pulls pages for current user on authentication
 const getPages = (data) => {
@@ -36,20 +37,20 @@ const createPage = (data) => {
   })
 }
 
-// const editPage = (data) => {
-//   return $.ajax({
-//     url: config.apiOrigin + '/pages/' + pageStore.id,
-//     method: 'PATCH',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data
-//   })
-// }
+const editPage = (data) => {
+  return $.ajax({
+    url: config.apiOrigin + '/pages/' + pageStore.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
 
 module.exports = {
   getPages,
   createPage,
-  getPage
-  // editPage
+  getPage,
+  editPage
 }

@@ -230,19 +230,19 @@ img{
 }
 
 // Page Template 1 Styling
-#template-1-header {
+#template-1-header, #modal1-edit-header {
   border-bottom: black 1px solid;
   font-size: 40px;
   font-weight: bold;
 }
 
-#template-1-sub-header {
+#template-1-sub-header, #modal1-edit-subheader, #modal2-edit-subheader {
   font-size: 25px;
   padding-top: 15px;
   padding-bottom: 15px;
 }
 
-#template-1-footer {
+#template-1-footer, #modal1-edit-footer, #modal2-edit-footer {
   text-align: center;
 }
 
@@ -251,19 +251,19 @@ img{
 }
 
 // Page Template 2 Styling
-#template-2-header {
+#template-2-header, #modal2-edit-header {
   text-align: center;
   background-color: #FFF4A6;
   font-size: 40px;
   font-weight: bold;
 }
 
-#template-2-sub-header {
+#template-2-sub-header, #modal2-edit-subheader {
   text-align: center;
   font-size: 20px;
 }
 
-#template-2-footer {
+#template-2-footer, #modal2-edit-contact {
   text-align: center;
 }
 
@@ -272,7 +272,7 @@ img{
 }
 
 
-#template-header, #template-header-2 {
+#template-header, #template-header-2, #modal2-edit-column-header2, #modal2-edit-column-header1 {
   font-weight: bold;
   font-size: 10;
   text-align: center;
