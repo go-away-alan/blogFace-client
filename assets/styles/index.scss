@@ -182,6 +182,7 @@ img{
   min-height: 600px;
   margin: 5px;
   border: 1px solid black;
+  padding-top: 40px;
 
   button {
     margin-bottom: 30px;
@@ -191,8 +192,9 @@ img{
 }
 
 .one-blogpost {
-  border: 2px solid black;
+  border: 1px solid;
   margin: 0 6%;
+  padding: 20px;
 
   h2 {
     margin-bottom: 50px;
