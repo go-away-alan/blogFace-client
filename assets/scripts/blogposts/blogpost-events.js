@@ -3,6 +3,7 @@
 const api = require('./api')
 const ui = require('./ui')
 const submitEditButtonTemplate = require('../templates/submitEditButtonTemplate.handlebars')
+const getFormFields = require('../../../lib/get-form-fields')
 
 const onDeleteBlog = function (event) {
   event.preventDefault()
@@ -58,6 +59,27 @@ const onGetBlogpost = function () {
     .catch(ui.getBlogPostFailure)
 }
 
+const onSubmitCreateBlog = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log(data)
+  api.submitCreateBlog(data)
+    .then(ui.submitCreateBlogSuccess)
+    .catch(ui.submitCreateBlogFailure)
+  $('#create-form').trigger('reset')
+}
+
+const onCreateBlog = function (event) {
+  event.preventDefault()
+  $('#create-modal').modal('show')
+  $('#create-form').on('submit', onSubmitCreateBlog)
+}
+
+const addHandlers = function () {
+  $('#create-button').on('click', onCreateBlog)
+}
+
 module.exports = {
-  onGetBlogpost
+  onGetBlogpost,
+  addHandlers
 }

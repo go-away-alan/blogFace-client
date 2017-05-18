@@ -320,6 +320,38 @@
     </div>
   </div>
 
+  <!-- start of create blog modal -->
+  <div class="modal fade" id="create-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Create New Blog</h4>
+        </div>
+        <div class="modal-body">
+          <!--  Start of error handling-->
+          <!--  End of error handling-->
+          <!--begin signup form-->
+          <form id="create-form">
+            <fieldset>
+              <legend>Enter a title and your blog content.</legend>
+              <input type="text" name="blogpost[blogpostTitle]" id="blogpost-title" placeholder="Enter Title">
+              <input type="text" name="blogpost[blogpostContent]" id="blogpost-main-content" placeholder="Enter Content">
+              <input type="submit" name="submit" value="New Blog!">
+            </fieldset>
+          </form>
+          <!--end signup form-->
+        </div>
+        <div class="modal-footer">
+          <button id="create-close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+
+  <!--end create modal-->
 
 
   <!-- This is the beginning of our dashboard. -->

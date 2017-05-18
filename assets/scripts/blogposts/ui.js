@@ -28,11 +28,21 @@ const editBlogFailure = (error) => {
   console.log('delete blog did not work and error is ', error)
 }
 
+const submitCreateBlogSuccess = (data) => {
+  console.log('create blog post success and data is ', data)
+}
+
+const submitCreateBlogFailure = (error) => {
+  console.log('create blog did not work and error is ', error)
+}
+
 module.exports = {
   getBlogpostsSuccess,
   getBlogpostsFailure,
   deleteBlogSuccess,
   deleteBlogFailure,
   editBlogSuccess,
-  editBlogFailure
+  editBlogFailure,
+  submitCreateBlogSuccess,
+  submitCreateBlogFailure
 }
