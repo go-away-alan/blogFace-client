@@ -36,6 +36,10 @@ const createPageSuccess = function (data) {
   $('#submit-template-2-button').off()
   $('#submit-template-1-button').prop('disabled', true)
   $('#submit-template-2-button').prop('disabled', true)
+  $('.page-content').empty()
+  api.getPages(data)
+    .then(getPagesSuccess)
+    .catch(getPagesSuccess)
 }
 
 const resetTemplate1Fields = function () {
@@ -55,6 +59,10 @@ const updateSuccess = function (data) {
   $('#page-template-1-edit-modal, #page-template-2-edit-modal').hide()
   $('#edit-container').remove()
   $('#submit-template-1-edit-button, #submit-template-2-edit-button').off()
+  $('.page-content').empty()
+  api.getPages(data)
+    .then(getPagesSuccess)
+    .catch(getPagesSuccess)
 }
 
 const updateFailure = function (error) {
@@ -79,11 +87,15 @@ const getPageSuccess = function (data) {
     $('#page-template-1-edit-modal').show()
     $('#edit-page-1-title').val(data.page.pageTitle)
     $('#submit-template-1-edit-button').on('click', onEditPage)
+    // AJZ
+    $('#delete-template-1-edit-button').on('click', onDestroyPage)
     showPageHtml(data)
   } else {
     $('#page-template-2-edit-modal').show()
     $('#edit-page-2-title').val(data.page.pageTitle)
     $('#submit-template-2-edit-button').on('click', onEditPage)
+    // AJZ
+    $('#delete-template-2-edit-button').on('click', onDestroyPage)
     showPageHtml(data)
   }
   const pageStoreId = data.page.id
@@ -196,6 +208,35 @@ const scrapeHtml2 = function () {
   pageStore.id = null
   pageStore.templateType = null
   console.log('NOW WHAT AM I?', data)
+}
+
+// Allows you to destroy the page.
+const onDestroyPage = function (event) {
+  event.preventDefault()
+  const id = pageStore.id
+  api.destroyPage(id)
+    .then(destroySuccess)
+    .catch(destroyFailure)
+  pageStore.id = null
+  pageStore.templateType = null
+  $('#page-1-template-edit, #page-2-template-edit').empty()
+  $('#delete-template-1-edit-button').off()
+  $('#delete-template-2-edit-button').off()
+}
+
+const destroySuccess = function (data) {
+  console.log(data)
+  $('.page-content').empty()
+  $('#page-template-1-edit-modal').hide()
+  $('#page-template-2-edit-modal').hide()
+  console.log('HI STEEEEVE', pageStore.id)
+  api.getPages(data)
+    .then(getPagesSuccess)
+    .catch(getPagesSuccess)
+}
+
+const destroyFailure = function (error) {
+  console.error(error)
 }
 
 module.exports = {

@@ -30,6 +30,7 @@ const signInSuccess = (data) => {
   blogpostEvents.onGetBlogpost()
   $('.signout-menu-item').show()
   $('.change-password-menu-item').show()
+  $('.page-content').show()
   $('.signup-menu-item').hide()
   $('.signin-menu-item').hide()
   $('#footerid').hide()
@@ -63,6 +64,7 @@ const signOutSuccess = (data) => {
   $('.change-password-menu-item').hide()
   $('.signout-menu-item').hide()
   $('#footerid').show()
+  $('.page-content').empty()
 }
 
 const signOutFailure = (error) => {
