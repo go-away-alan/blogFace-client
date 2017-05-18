@@ -2,13 +2,18 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 // body {
-//     background-color: #000;
+//     background-color: #143757;
 // }
 
 
 // Steve change
 #submit-edit {
 position: initial;
+}
+
+.nav-container {
+  margin: 0;
+  padding: 0;
 }
 
 .col-centered{
@@ -22,7 +27,7 @@ html, body {
     margin: 0;
 }
 
-li li.changepassword-menu-item {
+li li.change-password-menu-item {
   display: none;
 }
 
@@ -35,6 +40,7 @@ li li.signout-menu-item {
   display: none;
   text-align: center;
   padding-left: 55px;
+  padding-bottom: 0;
 }
 
 #landing-page-content {
@@ -49,8 +55,15 @@ li li.signout-menu-item {
   -webkit-box-sizing:border-box;
 }
 
+#footerid {
+  padding-top: 0;
+  margin-top: 0;
+}
+
 .navbar {
     margin-bottom: 0;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 // end Joni changes
