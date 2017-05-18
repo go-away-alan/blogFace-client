@@ -23,7 +23,19 @@ const deleteBlog = (id) => {
   })
 }
 
+const editBlog = (data, id) => {
+  return $.ajax({
+    url: config.apiOrigin + '/blogposts/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   getBlogposts,
-  deleteBlog
+  deleteBlog,
+  editBlog
 }

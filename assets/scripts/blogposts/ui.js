@@ -20,9 +20,19 @@ const deleteBlogFailure = (error) => {
   console.log('delete blog did not work and error is ', error)
 }
 
+const editBlogSuccess = (data) => {
+  console.log('edit blog post success and data is ', data)
+}
+
+const editBlogFailure = (error) => {
+  console.log('delete blog did not work and error is ', error)
+}
+
 module.exports = {
   getBlogpostsSuccess,
   getBlogpostsFailure,
   deleteBlogSuccess,
-  deleteBlogFailure
+  deleteBlogFailure,
+  editBlogSuccess,
+  editBlogFailure
 }
