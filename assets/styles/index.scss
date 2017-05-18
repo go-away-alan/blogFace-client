@@ -144,6 +144,11 @@ img{
   border: 1px solid black;
 }
 
+#create-button {
+  position: relative;
+  left: 36%;
+}
+
 .blogpost-content {
   background-color: #f9f9f2;
   min-height: 600px;
@@ -153,7 +158,7 @@ img{
   button {
     margin-bottom: 30px;
     position: relative;
-    left: 74%;
+    left: 34%;
   }
 }
 
