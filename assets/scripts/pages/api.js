@@ -48,9 +48,20 @@ const editPage = (data) => {
   })
 }
 
+const destroyPage = (id) => {
+  return $.ajax({
+    url: config.apiOrigin + '/pages/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   getPages,
   createPage,
   getPage,
-  editPage
+  editPage,
+  destroyPage
 }
