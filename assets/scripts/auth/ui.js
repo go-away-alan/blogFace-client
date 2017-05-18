@@ -7,6 +7,10 @@ const signUpSuccess = (data) => {
   console.log('signUpSuccess ran and data is ', data)
   $('#signup-modal').modal('hide')
   $('#signup-error').hide()
+  $('.signout-menu-item').hide()
+  $('.changepassword-menu-item').hide()
+  $('.signup-menu-item').hide()
+  $('.signin-menu-item').show()
 }
 
 const signUpFailure = (error) => {
@@ -22,6 +26,10 @@ const signInSuccess = (data) => {
   $('#landing-page-content').hide()
   $('#dashboard, .dash-container').show()
   blogpostEvents.onGetBlogpost()
+  $('#signout-menu-item').show()
+  $('.changepassword-menu-item').show()
+  $('.signup-menu-item').hide()
+  $('.signin-menu-item').hide()
 }
 
 const signInFailure = (error) => {
@@ -46,6 +54,10 @@ const signOutSuccess = (data) => {
   $('#signout-modal').modal('hide')
   $('#landing-page-content').show()
   $('#dashboard').hide()
+  $('.signup-menu-item').show()
+  $('.signin-menu-item').show()
+  $('.changepassword-menu-item').hide()
+  $('.signout-menu-item').hide()
 }
 
 const signOutFailure = (error) => {

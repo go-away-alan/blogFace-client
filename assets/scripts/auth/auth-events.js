@@ -65,6 +65,7 @@ const addHandlers = () => {
   $('#changepassword-close').on('click', closeModal)
   $('#getStartedWithinAboutModal-button').on('click', hideAboutShowSignin)
   $('#signupWithinSigninModal-button').on('click', hideSigninShowSignup)
+  $('.signout-menu-item').on('click', onSignOut)
 }
 
 module.exports = {
