@@ -3,11 +3,11 @@ const displaySinglePageTemplate = require('../../templates/load-single-page.hand
 
 const createPageSuccess = function (data) {
   console.log('data is ', data)
-  // const iframe = document.getElementById('template-1-iframe')
-  // // reloads the iframe and clears fields to the template is fresh
-  // iframe.src += ''
   resetTemplate1Fields()
   $('#page-template-1-modal').hide()
+  // Resetting click handlers on create modals to avoid duplicate POSTS if user creates another Page
+  $('#submit-template-1-button').off()
+  $('#submit-template-2-button').off()
 }
 
 const resetTemplate1Fields = function () {
