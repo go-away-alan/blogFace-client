@@ -54,6 +54,7 @@ const changePasswordFailure = (error) => {
 const signOutSuccess = (data) => {
   store.user = null
   console.log('sign in ran and data is ', data)
+  $('.blogpost-content').empty()
   $('#signout-modal').modal('hide')
   $('#landing-page-content').show()
   $('#dashboard').hide()
