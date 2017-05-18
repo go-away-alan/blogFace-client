@@ -1,5 +1,7 @@
 {{#each blogposts as |blogpost|}}
 
+
+<blockquote data-id="{{blogpost.id}}">
 <div class='blogpost-container' data-id="{{blogpost.id}}">
   <div data-id="{{blogpost.id}}" class='one-blogpost'>
     <div>
@@ -15,5 +17,7 @@
   <button type="button" data-id="{{blogpost.id}}" class='btn btn-default blog-edit-button'>Edit Blog</button>
   <button type="button" data-id="{{blogpost.id}}" class='btn btn-danger blog-delete-button'>Delete Blog</button>
 </div>
+</blockquote>
+
 
 {{/each}}

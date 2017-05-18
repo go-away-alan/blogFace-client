@@ -12,6 +12,7 @@ const onDeleteBlog = function (event) {
     .then(ui.deleteBlogSuccess)
     .then(() => {
       $('.one-blogpost[data-id=' + id + ']').parent().hide('blind')
+      $('blockquote[data-id=' + id + ']').hide('blind')
     })
     .catch(ui.deleteBlogFailure)
 }
@@ -21,10 +22,12 @@ const onSubmitEdit = function (event) {
   const blogpostTitle = $(this).parent().find('h2')[0].innerHTML
   const blogpostContent = $(this).parent().find('p')[0].innerHTML
   const id = $(this).prev().attr('data-id')
+  const strippedBlogContent = blogpostContent.replace(/(<([^>]+)>)/ig, '')
+  const strippedBlogTitle = blogpostTitle.replace(/(<([^>]+)>)/ig, '')
   const data = {
     'blogpost': {
-      'blogpostTitle': blogpostTitle,
-      'blogpostContent': blogpostContent
+      'blogpostTitle': strippedBlogTitle,
+      'blogpostContent': strippedBlogContent
     }
   }
   api.editBlog(data, id)
@@ -32,7 +35,7 @@ const onSubmitEdit = function (event) {
     .then(() => {
       $('p[data-id=' + id + ']').attr('contenteditable', 'false')
       $('h2[data-id=' + id + ']').attr('contenteditable', 'false')
-      $('.one-blogpost[data-id=' + id + ']').css('border', '1px solid')
+      $('.one-blogpost[data-id=' + id + ']').css('border', 'none')
       $('.blog-delete-button[data-id=' + id + ']').show()
       $('.blog-edit-button[data-id=' + id + ']').show()
       $('#submit-edit').remove()
