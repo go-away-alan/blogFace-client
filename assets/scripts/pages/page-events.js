@@ -159,21 +159,20 @@ const hideTemplate2Edit = function (event) {
   $('#create-page-2-title').val('')
 }
 
-const onGetPage = function () {
-  const id = $('#id-field').val()
-  console.log('id is ', id)
-  event.preventDefault()
-  api.getPage(id)
-  .then(ui.getPageSuccess)
-  .catch(ui.getPageFailure)
-}
+// const onGetPage = function (event) {
+//   const id = $(this).data('id')
+//   console.log('Simon says This ID is', $(this).data('id'))
+//   event.preventDefault()
+//   api.getPage(id)
+//   .then(ui.getPageSuccess)
+//   .catch(ui.getPageFailure)
+// }
 
 const addHandlers = () => {
   $('#display-page-template-1').on('click', showTemplate1)
   $('#display-page-template-2').on('click', showTemplate2)
   $('#cancel-template-1-button').on('click', hideTemplate1)
   $('#cancel-template-2-button').on('click', hideTemplate2)
-  $('#id-form').on('submit', onGetPage)
   $('#cancel-template-1-edit-button').on('click', hideTemplate1Edit)
   $('#cancel-template-2-edit-button').on('click', hideTemplate2Edit)
 }
@@ -181,4 +180,6 @@ const addHandlers = () => {
 module.exports = {
   addHandlers,
   onGetPages
+  // ,
+  // onGetPage
 }

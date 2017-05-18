@@ -2,11 +2,23 @@
 const displaySinglePageTemplate = require('../../templates/load-editable-temp-1.handlebars')
 const displaySinglePageTemplate2 = require('../../templates/load-editable-temp-2.handlebars')
 const pageDisplayer = require('../../templates/pageDisplayer.handlebars')
+// const pageEvents = require('./page-events.js')
+const api = require('./api.js')
 
 const getPagesSuccess = function (data) {
   console.log('here are the user pages ', data)
   const pageShower = pageDisplayer({ pages: data.pages })
   $('.page-content').append(pageShower)
+  $('.madePage').on('click', onGetPage)
+}
+
+const onGetPage = function (event) {
+  event.preventDefault()
+  const id = $(this).data('id')
+  console.log('Simon says This ID is', $(this).data('id'))
+  api.getPage(id)
+  .then(getPageSuccess)
+  .catch(getPageFailure)
 }
 
 const getPagesFailure = function (error) {
