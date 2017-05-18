@@ -1,9 +1,12 @@
 'use strict'
 const displaySinglePageTemplate = require('../../templates/load-editable-temp-1.handlebars')
 const displaySinglePageTemplate2 = require('../../templates/load-editable-temp-2.handlebars')
+const pageDisplayer = require('../../templates/pageDisplayer.handlebars')
 
 const getPagesSuccess = function (data) {
   console.log('here are the user pages ', data)
+  const pageShower = pageDisplayer({ pages: data.pages })
+  $('.page-content').append(pageShower)
 }
 
 const getPagesFailure = function (error) {
