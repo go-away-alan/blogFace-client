@@ -19,14 +19,22 @@ const onSubmitEdit = function (event) {
   event.preventDefault()
   const blogpostTitle = $(this).parent().find('h2')[0].innerHTML
   const blogpostContent = $(this).parent().find('p')[0].innerHTML
+  const id = $(this).prev().attr('data-id')
   const data = {
-    'blogpostTitle': blogpostTitle,
-    'blogpostContent': blogpostContent
+    'blogpost': {
+      'blogpostTitle': blogpostTitle,
+      'blogpostContent': blogpostContent
+    }
   }
-  console.log(data)
-  // api.editBlog(data)
-  //   .then(ui.editBlogSuccess)
-  //   .catch(ui.editBlogFailure)
+  api.editBlog(data, id)
+    .then(ui.editBlogSuccess)
+    .then(() => {
+      $('p[data-id=' + id + ']').attr('contenteditable', 'false')
+      $('h2[data-id=' + id + ']').attr('contenteditable', 'false')
+      $('.one-blogpost[data-id=' + id + ']').css('background-color', 'yellow')
+      $('#submit-edit').remove()
+    })
+    .catch(ui.editBlogFailure)
 }
 
 const onEditBlog = function (event) {
