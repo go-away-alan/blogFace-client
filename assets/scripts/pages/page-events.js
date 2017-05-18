@@ -87,10 +87,10 @@ const scrapeHtml2 = function (event) {
   // strip html tags from text - safety against injection
   const strippedPageContent = pageContent.replace(/(<([^>]+)>)/ig, '')
   data.page.pageContent = strippedPageContent
-  // const pageContentMore = $('#template-2-more').text()
-  // // strip html tags from text - safety against injection
-  // const strippedPageContentMore = pageContentMore.replace(/(<([^>]+)>)/ig, '')
-  // data.page.pageContentMore = strippedPageContentMore
+  const pageContentMore = $('#template-2-more').text()
+  // strip html tags from text - safety against injection
+  const strippedPageContentMore = pageContentMore.replace(/(<([^>]+)>)/ig, '')
+  data.page.pageContentMore = strippedPageContentMore
   const contact = $('#template-2-email').text()
   // strip html tags from text - safety against injection
   const strippedContact = contact.replace(/(<([^>]+)>)/ig, '')
