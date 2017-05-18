@@ -91,6 +91,19 @@ const scrapeHtml2 = function (event) {
   // strip html tags from text - safety against injection
   const strippedPageContentMore = pageContentMore.replace(/(<([^>]+)>)/ig, '')
   data.page.pageContentMore = strippedPageContentMore
+
+  // Bug fix for pageContentMore Column 1
+  const columnHeader1 = $('#template-header').text()
+  // strip html tags from text - safety against injection
+  const strippedColumnHeader1 = columnHeader1.replace(/(<([^>]+)>)/ig, '')
+  data.page.columnHeader1 = strippedColumnHeader1
+
+  // Bug fix for pageContentMore Column 2
+  const columnHeader2 = $('#template-header-2').text()
+  // strip html tags from text - safety against injection
+  const strippedColumnHeader2 = columnHeader2.replace(/(<([^>]+)>)/ig, '')
+  data.page.columnHeader2 = strippedColumnHeader2
+
   const contact = $('#template-2-email').text()
   // strip html tags from text - safety against injection
   const strippedContact = contact.replace(/(<([^>]+)>)/ig, '')
