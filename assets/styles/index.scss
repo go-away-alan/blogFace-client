@@ -1,12 +1,10 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-// body {
-//     background-color: #143757;
-// }
+body {
+    background-color: #143757;
+}
 
-
-// Steve change
 #submit-edit, #cancel-edit {
 position: initial;
 }
