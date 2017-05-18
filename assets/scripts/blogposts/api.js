@@ -34,8 +34,20 @@ const editBlog = (data, id) => {
   })
 }
 
+const submitCreateBlog = (data) => {
+  return $.ajax({
+    url: config.apiOrigin + '/blogposts',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   getBlogposts,
   deleteBlog,
-  editBlog
+  editBlog,
+  submitCreateBlog
 }

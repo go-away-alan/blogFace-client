@@ -16,10 +16,12 @@ require('./example')
 const authEvents = require('./auth/auth-events.js')
 const pageEvents = require('./pages/page-events')
 const preLoadHide = require('./pre-load-hide')
+const blogpostEvents = require('./blogposts/blogpost-events.js')
 
 preLoadHide.preLoad()
 
 $(() => {
   authEvents.addHandlers()
   pageEvents.addHandlers()
+  blogpostEvents.addHandlers()
 })
