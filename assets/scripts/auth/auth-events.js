@@ -53,6 +53,7 @@ const hideAboutShowSignin = function () {
 const hideSigninShowSignup = function () {
   $('#signin-modal').modal('hide')
   $('#signup-modal').modal('show')
+  $('#signin-error').hide()
 }
 
 const addHandlers = () => {

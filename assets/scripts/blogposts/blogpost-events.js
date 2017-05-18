@@ -14,6 +14,13 @@ const onDeleteBlog = function (event) {
       $('.one-blogpost[data-id=' + id + ']').parent().hide('blind')
       $('blockquote[data-id=' + id + ']').hide('blind')
     })
+    .then(() => {
+      const numOfBlogs = $('.blogpost-content').children().length
+      console.log(numOfBlogs)
+      if (numOfBlogs < 2) {
+        $('.blogpost-content').append('<h1>No Blogs</h1>')
+      }
+    })
     .catch(ui.deleteBlogFailure)
 }
 
