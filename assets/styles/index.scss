@@ -7,7 +7,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 
 // Steve change
-#submit-edit {
+#submit-edit, #cancel-edit {
 position: initial;
 }
 
@@ -174,7 +174,7 @@ img{
 
 #create-button {
   position: relative;
-  left: 36%;
+  left: 42%;
 }
 
 .blogpost-content {
@@ -187,14 +187,15 @@ img{
   button {
     margin-bottom: 30px;
     position: relative;
-    left: 34%;
+    left: 37%;
   }
 }
 
 .one-blogpost {
   border: 1px solid;
-  margin: 0 6%;
+  margin: 20px 20px 0 20px;
   padding: 20px;
+  background-color: #fff;
 
   h2 {
     margin-bottom: 50px;
