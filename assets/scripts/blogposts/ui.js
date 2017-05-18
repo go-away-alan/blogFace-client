@@ -3,9 +3,9 @@
 const showBlogpostsTemplate = require('../templates/show-blogposts-template.handlebars')
 
 const getBlogpostsSuccess = (data) => {
-  console.log('got the blogposts :) here they are ', data)
   const showBlogpostsHtml = showBlogpostsTemplate({ blogposts: data.blogposts })
   $('.blogpost-content').append(showBlogpostsHtml)
+  console.log('inside getBlogpostsSuccess ', data)
 }
 
 const getBlogpostsFailure = (error) => {
@@ -31,6 +31,7 @@ const editBlogFailure = (error) => {
 const submitCreateBlogSuccess = (data) => {
   console.log('create blog post success and data is ', data)
   $('#create-modal').modal('hide')
+  $('.blogpost-content').empty()
 }
 
 const submitCreateBlogFailure = (error) => {
