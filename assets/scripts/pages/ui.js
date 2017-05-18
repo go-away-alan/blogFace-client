@@ -1,6 +1,14 @@
 'use strict'
 const displaySinglePageTemplate = require('../../templates/load-single-page.handlebars')
 
+const getPagesSuccess = function (data) {
+  console.log('here are the user pages ', data)
+}
+
+const getPagesFailure = function (error) {
+  console.error('ERROR ', error)
+}
+
 const createPageSuccess = function (data) {
   console.log('data is ', data)
   resetTemplate1Fields()
@@ -31,6 +39,7 @@ const getPageSuccess = function (data) {
   $('#create-page-1-edit-title').val(data.page.pageTitle)
   const showPageHtml = displaySinglePageTemplate({ page: data.page })
   $('#page-1-template-edit').append(showPageHtml)
+  $('#edit-page-1-title').val(data.page.pageTitle)
 }
 
 const getPageFailure = function (error) {
@@ -41,5 +50,7 @@ module.exports = {
   createPageSuccess,
   createPageFailure,
   getPageSuccess,
-  getPageFailure
+  getPageFailure,
+  getPagesSuccess,
+  getPagesFailure
 }

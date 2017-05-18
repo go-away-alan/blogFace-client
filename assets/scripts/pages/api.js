@@ -3,6 +3,17 @@
 const config = require('../config')
 const store = require('../store')
 
+// Pulls pages for current user on authentication
+const getPages = (data) => {
+  return $.ajax({
+    url: config.apiOrigin + '/pages',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const getPage = (id) => {
   return $.ajax({
     url: config.apiOrigin + '/pages/' + id,
@@ -25,7 +36,20 @@ const createPage = (data) => {
   })
 }
 
+// const editPage = (data) => {
+//   return $.ajax({
+//     url: config.apiOrigin + '/pages/' + pageStore.id,
+//     method: 'PATCH',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data
+//   })
+// }
+
 module.exports = {
+  getPages,
   createPage,
   getPage
+  // editPage
 }

@@ -3,6 +3,12 @@
 const api = require('./api')
 const ui = require('./ui')
 
+const onGetPages = function () {
+  api.getPages()
+    .then(ui.getPagesSuccess)
+    .catch(ui.getPagesFailure)
+}
+
 const showTemplate1 = function (event) {
   event.preventDefault()
   $('#page-template-1-modal').show()
@@ -151,5 +157,6 @@ const addHandlers = () => {
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  onGetPages
 }
