@@ -7,7 +7,7 @@ const signUpSuccess = (data) => {
   console.log('signUpSuccess ran and data is ', data)
   $('#signup-modal').modal('hide')
   $('#signup-error').hide()
-  $('#signout-menu-item').hide()
+  $('.signout-menu-item').hide()
   $('.changepassword-menu-item').hide()
   $('.signup-menu-item').hide()
   $('.signin-menu-item').show()
@@ -57,7 +57,7 @@ const signOutSuccess = (data) => {
   $('.signup-menu-item').show()
   $('.signin-menu-item').show()
   $('.changepassword-menu-item').hide()
-  $('#signout-menu-item').hide()
+  $('.signout-menu-item').hide()
 }
 
 const signOutFailure = (error) => {
