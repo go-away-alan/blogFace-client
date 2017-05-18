@@ -28,10 +28,11 @@ const signInSuccess = (data) => {
   $('#landing-page-content').hide()
   $('#dashboard, .dash-container').show()
   blogpostEvents.onGetBlogpost()
-  $('#signout-menu-item').show()
-  $('.changepassword-menu-item').show()
+  $('.signout-menu-item').show()
+  $('.change-password-menu-item').show()
   $('.signup-menu-item').hide()
   $('.signin-menu-item').hide()
+  $('#footerid').hide()
 }
 
 const signInFailure = (error) => {
@@ -58,8 +59,9 @@ const signOutSuccess = (data) => {
   $('#dashboard').hide()
   $('.signup-menu-item').show()
   $('.signin-menu-item').show()
-  $('.changepassword-menu-item').hide()
+  $('.change-password-menu-item').hide()
   $('.signout-menu-item').hide()
+  $('#footerid').show()
 }
 
 const signOutFailure = (error) => {
