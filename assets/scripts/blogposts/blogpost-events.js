@@ -31,7 +31,7 @@ const onSubmitEdit = function (event) {
     .then(() => {
       $('p[data-id=' + id + ']').attr('contenteditable', 'false')
       $('h2[data-id=' + id + ']').attr('contenteditable', 'false')
-      $('.one-blogpost[data-id=' + id + ']').css('background-color', 'yellow')
+      $('.one-blogpost[data-id=' + id + ']').css('background-color', '#f9f9f2')
       $('#submit-edit').remove()
     })
     .catch(ui.editBlogFailure)
