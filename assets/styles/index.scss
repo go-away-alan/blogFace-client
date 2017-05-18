@@ -136,11 +136,17 @@ img{
   min-height: 600px;
   margin: 5px;
   border: 1px solid black;
+
+  button {
+    margin-bottom: 30px;
+    position: relative;
+    left: 74%;
+  }
 }
 
 .one-blogpost {
   border: 2px solid black;
-  margin: 0 6% 30px 6%;
+  margin: 0 6%;
 
   h2 {
     margin-bottom: 50px;
