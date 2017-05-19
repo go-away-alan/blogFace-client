@@ -3,9 +3,13 @@
 const showBlogpostsTemplate = require('../templates/show-blogposts-template.handlebars')
 
 const getBlogpostsSuccess = (data) => {
-  const showBlogpostsHtml = showBlogpostsTemplate({ blogposts: data.blogposts })
-  $('.blogpost-content').append(showBlogpostsHtml)
-  // console.log('inside getBlogpostsSuccess ', data)
+  if (data.blogposts.length < 1) {
+    $('.blogpost-content').append('<h1>No Blogs</h1>')
+  } else {
+    const showBlogpostsHtml = showBlogpostsTemplate({ blogposts: data.blogposts })
+    $('.blogpost-content').append(showBlogpostsHtml)
+    // console.log('inside getBlogpostsSuccess ', data)
+  }
 }
 
 const getBlogpostsFailure = (error) => {

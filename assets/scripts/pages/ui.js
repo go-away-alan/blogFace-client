@@ -8,9 +8,13 @@ const pageStore = require('../pageStore')
 
 const getPagesSuccess = function (data) {
   // console.log('here are the user pages ', data)
-  const pageShower = pageDisplayer({ pages: data.pages })
-  $('.page-content').append(pageShower)
-  $('.madePage').on('click', onGetPage)
+  if (data.pages.length < 1) {
+    $('.page-content').append('<h3>No Pages</h3>')
+  } else {
+    const pageShower = pageDisplayer({ pages: data.pages })
+    $('.page-content').append(pageShower)
+    $('.madePage').on('click', onGetPage)
+  }
 }
 
 const onGetPage = function (event) {
