@@ -151,6 +151,8 @@ const hideTemplate1Edit = function (event) {
   $('#edit-container').remove()
   $('#page-template-1-edit-modal').hide()
   $('#create-page-1-title').val('')
+  $('#delete-template-1-edit-button').off()
+  $('#submit-template-1-edit-button').off()
 }
 
 const hideTemplate2Edit = function (event) {
@@ -158,6 +160,8 @@ const hideTemplate2Edit = function (event) {
   $('#edit-container').remove()
   $('#page-template-2-edit-modal').hide()
   $('#create-page-2-title').val('')
+  $('#delete-template-2-edit-button').off()
+  $('#submit-template-2-edit-button').off()
 }
 
 const addHandlers = () => {

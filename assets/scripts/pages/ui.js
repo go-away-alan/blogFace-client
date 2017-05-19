@@ -60,9 +60,12 @@ const createPageFailure = function (error) {
 
 const updateSuccess = function (data) {
   // console.log(data)
+  $('#delete-template-1-edit-button').off()
+  $('#delete-template-2-edit-button').off()
+  $('#submit-template-1-edit-button').off()
+  $('#submit-template-2-edit-button').off()
   $('#page-template-1-edit-modal, #page-template-2-edit-modal').hide()
   $('#edit-container').remove()
-  $('#submit-template-1-edit-button, #submit-template-2-edit-button').off()
   $('.page-content').empty()
   api.getPages(data)
     .then(getPagesSuccess)
@@ -224,13 +227,15 @@ const onDestroyPage = function (event) {
   pageStore.id = null
   pageStore.templateType = null
   $('#page-1-template-edit, #page-2-template-edit').empty()
-  $('#delete-template-1-edit-button').off()
-  $('#delete-template-2-edit-button').off()
 }
 
 const destroySuccess = function (data) {
   // console.log(data)
   $('.page-content').empty()
+  $('#delete-template-1-edit-button').off()
+  $('#delete-template-2-edit-button').off()
+  $('submit-template-1-edit-button').off()
+  $('submit-template-2-edit-button').off()
   $('#page-template-1-edit-modal').hide()
   $('#page-template-2-edit-modal').hide()
   // console.log('HI STEEEEVE', pageStore.id)
