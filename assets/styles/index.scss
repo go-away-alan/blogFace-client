@@ -1,7 +1,15 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+.modal-title-signup {
+  color: #AF601A;
+  font-size: 24px;
+}
 
+.modal-title-signin {
+  color: #229954;
+  font-size: 24px;
+}
 
 hr.style17 {
 	border-top: 1px solid #8c8b8b;

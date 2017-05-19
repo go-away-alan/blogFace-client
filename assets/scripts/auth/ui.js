@@ -12,6 +12,7 @@ const signUpSuccess = (data) => {
   $('.changepassword-menu-item').hide()
   $('.signup-menu-item').hide()
   $('.signin-menu-item').show()
+  $('#signin-modal').modal('show')
 }
 
 const signUpFailure = (error) => {
