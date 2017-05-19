@@ -7,10 +7,10 @@
 BlogFace is a content management system that allows visitors to create users for creating and displaying pages and blogposts. Users, once logged in, have the ability to create, edit, retrieve, and delete pages and blogposts that the user has created. Users also have the ability to change passwords and log out.
 
 Link to deployed App: https://go-away-alan.github.io/blogFace-client/
+
 (Additional links to repos are provided in the Links section below.)
 
 ## ERD
-[![ERD]( http://imgur.com/a/il2L0)]( http://imgur.com/a/il2L0)
 
 Link to ERD: http://imgur.com/a/il2L0
 
@@ -19,19 +19,24 @@ Link to ERD: http://imgur.com/a/il2L0
 ### Development & Team Dynamics
 
 We started our project by reading our CMS prompt and making a list of questions that we wanted answered by our consultants for clarification. After coming up with a team name and establishing roles for each of our members, we determined a schedule for doing standups each morning and afternoon. We also came up with user stories, wireframes, and an ERD for our project, which helped guide us through the coding of our back-end and front-end applications.
+
 	Throughout the project, we stayed together as a group as much as we could to make communication between members much easier since it was the first time working with git rebasing tools.
 
 ### API
 
 Our ERD consisted of one user having the ability to created multiple pages as well as multiple blogposts. For a visual of our ERD, please refer to the ERD section above. Using the ERD, we knew we had to create 2 additional resources on top of the user resource which was provided to us by the Express API Template.
+
 	After determining the types of attributes that would be needed for each resource, we started by creating a controller and filled it with actions associated with the appropriate CRUD actions. Using the attributes, we also created the schema from within each of our resource models and updated the routes file to reflect the new resources. Express/Mongo allowed us the flexibility to add in attributes as we saw fit, which was valuable when we created an additional Template which required more fields.
+
 	Once we finished establishing the controllers, models, and routes for our resources, we developed curl scripts in order to test our actions locally to make sure they were working appropriately.
 
 ### Client
 
 After we met with the consultants, we determined that we would start by creating a landing page for our users for sign-up and sign-in authentication similar to our competitors (Wix and Wordpress). We started by creating the functionality for authentication first, seeing that we had already developed similar features individually for our own projects. For our authentication feature, we relied heavily on modals.
 
+	Next, we used the wireframe we created to come up with a dashboard for managing and displaying our content. We wanted to have a specific section for pages as well as a section for blogposts. According to our user stories, users should have the ability to create a new page by selecting a template type. The template type provides users with the option of having two different styles for your created page. From the Page creation modal, users have the ability to edit in-line and update the page accordingly.
 
+	Finally, users were able to create blogposts within our dashboard. Hitting the Create New Blog button opens up a model which allows you to add content and display it on your dashboard.  Users also have the ability to edit and delete blogposts as appropriate.
 
 ## User Stories
 
