@@ -162,6 +162,8 @@ const hideTemplate2Edit = function (event) {
   $('#create-page-2-title').val('')
   $('#delete-template-2-edit-button').off()
   $('#submit-template-2-edit-button').off()
+  $('#template-header').off()
+  $('#template-header-2').off()
 }
 
 const addHandlers = () => {

@@ -33,6 +33,7 @@ const getPagesFailure = function (error) {
 const createPageSuccess = function (data) {
   // console.log('data is ', data)
   resetTemplate1Fields()
+  resetTemplate2Fields()
   $('#page-template-1-modal').hide()
   $('#page-template-2-modal').hide()
   // Resetting click handlers on create modals to avoid duplicate POSTS if user creates another Page
@@ -53,6 +54,16 @@ const resetTemplate1Fields = function () {
   $('#template-1-email').text('example@example.com')
   $('#create-page-1-title').val('')
 }
+
+const resetTemplate2Fields = function () {
+  $('#template-2-header').text('Header')
+  $('#template-2-sub-header').text('Sub-Header')
+  $('#template-2-about').text('About Me')
+  $('#template-header').text('About Me')
+  $('#template-header-2').text('More Info..')
+  $('#template-2-more').text('More Info..')
+  $('#template-2-email').text('example@example.com')
+  $('#create-page-2-title').val('')
 
 const createPageFailure = function (error) {
   console.error('ERROR ', error)
