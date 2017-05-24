@@ -64,6 +64,7 @@ const resetTemplate2Fields = function () {
   $('#template-2-more').text('More Info..')
   $('#template-2-email').text('example@example.com')
   $('#create-page-2-title').val('')
+}
 
 const createPageFailure = function (error) {
   console.error('ERROR ', error)
