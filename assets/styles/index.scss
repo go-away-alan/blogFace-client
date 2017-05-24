@@ -196,21 +196,38 @@ img{
 #page-1-template-default, #page-1-template-edit, #page-2-template-default, #page-2-template-edit {
   max-width: 600px;
   min-height: 450px;
+  max-height: 550px;
 }
 
-// #template-1-about, #template-1-header, #template-1-sub-header, #template-1-email,
-// #template-2-header, #template-2-sub-header, #template-header, #template-header-2,
-// #template-2-about, #template-2-more, #template-2-email {
-//   max-height: 100px;
-//   overflow: auto;
-// }
-//
-// #modal1-edit-header, #modal1-edit-subheader, #modal1-edit-about, #modal1-edit-contact,
-// #modal2-edit-header, #modal2-edit-column-header1, #modal2-edit-column-header2, #modal2-edit-about,
-// #modal2-edit-more, #modal2-editcontent  {
-//   max-height: 100px;
-//   overflow: auto;
-// }
+// email 20px
+#template-1-email, #template-2-email, #modal1-edit-contact {
+  max-height: 50px;
+  overflow: auto;
+}
+
+// subheaders 30px
+#template-1-sub-header, #template-2-header, #template-2-sub-header, #modal1-edit-subheader  {
+  max-height: 70px;
+  overflow: auto;
+}
+
+// headers 50px
+#modal2-edit-column-header1, #modal2-edit-column-header2, #modal2-edit-header, #modal1-edit-header, #template-1-header, #template-header-2, #template-header  {
+  max-height: 60px;
+  overflow: auto;
+}
+
+//about 100px
+#modal2-edit-about, #template-1-about, #template-2-about, #modal1-edit-about  {
+  max-height: 150px;
+  overflow: auto;
+}
+
+// more 100px
+#template-2-more, #modal2-edit-more, #modal2-editcontent  {
+  max-height: 150px;
+  overflow: auto;
+}
 
 // row.scrollbars {
 //   max-height: 100px;
