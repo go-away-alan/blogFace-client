@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>blogFace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+  <!-- CDN to Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+
+
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container-fluid">
+
+
+  <!--begin nav bar-->
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+        <a class="navbar-brand" href="#">blogFace</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="#about-modal" data-toggle="modal" data-target="#about-modal">About blogFace</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li class="signup-menu-item"><a href="#signup-modal" data-toggle="modal" data-target="#signup-modal">Sign Up</a></li>
+              <li class="signin-menu-item"><a href="#signin-modal" data-toggle="modal" data-target="#signin-modal">Sign In</a></li>
+              <li class="change-password-menu-item"><a href="#changepassword-modal" data-toggle="modal" data-target="#changepassword-modal">Change Password</a></li>
+              <li class="signout-menu-item"><a href="#">Sign Out</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+
+  <!--end nav bar-->
+
+
+  <!--begin about modal-->
+
+  <div class="modal fade" id="about-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Welcome to blogFace!</h4>
+        </div>
+        <div class="modal-body">
+          <p>You are just a few steps away from creating your own blog and web space! It's entirely free and all you need is an email address to get started. Sign up now and find out how easy it is to build your own site!</p>
+          <p>blogFace basic is 100% free! There is no limit to how much content you can add. Be as creative as you want to be!</p>
+          <p> For our blogFace customers who would like to incorporate advanced features such as email and text alerts, a shopping cart, advertisements, etc., we do offer a tiered premium service and would be happy to review that with you. Please <a href='mailto:blogfacepremium@blogface.com'>contact our support team</a>            and provide a brief description of how we can help you achieve your goals, along with contact information.</p>
+          <br><br>
+          <!-- <center><a href="#signin-modal" data-toggle="modal" data-target="#signin-modal"><button type="button" id="getStartedWithinAboutModal-button" class="btn btn-success btn-lg">Get Started</button></a>
+          <center> -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+
+  <!--end about modal-->
+
+
+
+  <!--begin signup modal-->
+
+  <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title-signup">Sign Up</h4>
+        </div>
+        <div class="modal-body">
+          <!--  Start of auth error handling-->
+          <div class='alert alert-danger' id='signup-error' role='alert'>
+            <strong>Oh snap!</strong> Try again, make sure your passwords are matching.
+          </div>
+          <!--begin signup form-->
+          <form id="signup-form">
+            <fieldset>
+              <legend>Please enter an email address and password.</legend>
+              <input type="text" name="credentials[email]" id="signup-email" placeholder="Enter Email">
+              <input type="password" name="credentials[password]" id="signup-password" placeholder="Enter Password">
+              <input type="password" name="credentials[password_confirmation]" id="signup-passwordconfirm" placeholder="Confirm password">
+              <input type="submit" name="submit" value="Sign up!">
+            </fieldset>
+          </form>
+          <!--end signup form-->
+        </div>
+        <div class="modal-footer">
+          <button id="signup-close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+
+  <!--end signup modal-->
+
+
+  <!--begin signin modal-->
+
+  <div class="modal fade" id="signin-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title-signin">Sign In</h4>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-danger" id='signin-error' role="alert">
+            <strong>Hmmmm</strong> Try again, email and password do not match.
+          </div>
+          <!--begin signin form-->
+          <form id="signin-form">
+            <fieldset>
+              <legend>Please enter your login credentials below.</legend>
+
+              <input type="text" name="credentials[email]" id="sign-in email" placeholder="Enter Email">
+              <input type="password" name="credentials[password]" id="sign-in password" placeholder="Enter Password">
+              <input type="submit" name="submit" value="Sign in!">
+              <br><br><br>
+              <p>Don't yet have an account? Please <button id="signupWithinSigninModal-button" type="button" class="btn btn-default" data-dismiss="modal">Sign Up</button></p>
+            </fieldset>
+          </form>
+          <!--end signin form-->
+        </div>
+        <div class="modal-footer">
+          <button id="signin-close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+
+  <!--end signin modal-->
+
+
+  <!--begin changepassword modal-->
+
+  <div class="modal fade" id="changepassword-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Change Password</h4>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-danger alert-dismissible" id='changepw-error' role="alert">
+            <strong>What the....</strong> Change password failed. Try again.
+          </div>
+          <!--begin changepassword form-->
+          <form id="changepassword-form">
+            <fieldset>
+              <legend></legend>
+              <input type="password" name="passwords[old]" id="old password" placeholder="old password">
+              <input type="password" name="passwords[new]" id="new password" placeholder="new password">
+              <input type="submit" name="submit" value="Change password!">
+            </fieldset>
+          </form>
+          <!--end changepassword form-->
+        </div>
+        <div class="modal-footer">
+          <button id="changepassword-close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+
+  <!--end changepassword modal-->
+
+  <div id="landing-page-content">
+    <div id="welcome">
+      <p>Welcome to</p>
+    </div>
+    <div id="blogface">
+      <p>{ blogFace }</p>
+    </div>
+    <br><br><br><br>
+    <div id="welcome-text">
+      <p>Creating blog posts and web pages<br>has never been easier!<br> Click the Get Started button to begin!</p>
+    </div>
+    <br><br>
+    <div id="getstarted-button">
+      <a href="#signin-modal" data-toggle="modal" data-target="#signin-modal"><button type="button" class="btn btn-success btn-lg">Get Started</button></a>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </div>
+  <!--end landing page content div-->
+
+
+  <!-- Create Modal for Page Template 1 -->
+  <div class="modal fade in" id="page-template-1-modal" tabindex="-1" role="dialog" style="display:none">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="title-container">
+          <input class="page-title" type="text" name="page[title]" maxlength="50" id="create-page-1-title" placeholder="*Page Title">
+        </div>
+        <div class='alert alert-success temp-alerts' role='alert'>
+          <strong>Hey there!</strong> Replace these sections with your own content and click submit when you're done. <strong>Make sure you add a title above!</strong>
+        </div>
+        <div class="modal-body">
+          <div data-id="1" id="page-1-template-default">
+            <div id="template-1-header" contenteditable="true">Header</div>
+            <div id="template-1-sub-header" contenteditable="true">Sub-Header</div>
+            <div id="template-1-about" contenteditable="true">About me..</div>
+            <div id="template-1-footer">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <div id="template-1-email" contenteditable="true">example@email.com</div>
+            </div>
+          </div>
+          <div class="mdl-dialog__actions">
+            <button id="submit-template-1-button" type="submit" name="submit" value="Submit Template 1" class="btn-sm btn-success mdl-button" disabled="disabled">Submit</button>
+            <button id="cancel-template-1-button" type="button" class="btn-sm btn-warning mdl-button">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Create Modal for Page Template 2 -->
+  <div class="modal fade in" id="page-template-2-modal" tabindex="-1" role="dialog" style="display:none">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="title-container">
+          <input class="page-title" type="text" name="page[title]" maxlength="50" id="create-page-2-title" placeholder="*Page Title">
+        </div>
+        <div class='alert alert-success temp-alerts' role='alert'>
+          <strong>Hey there!</strong> Replace these sections with your own content and click submit when you're done. <strong>Make sure you add a title above!</strong>
+        </div>
+        <div class="modal-body">
+          <div data-id="2" id="page-2-template-default">
+            <div id="template-2-header" contenteditable="true">Header</div>
+            <div id="template-2-sub-header" contenteditable="true">Sub-Header</div>
+            <div class="row">
+              <div class="col-xs-6" id="template-header" contenteditable="true">About me..</div>
+              <div class="col-xs-6" id="template-header-2" contenteditable="true">More info..</div>
+            </div>
+            <div class="row">
+              <div class="col-xs-6" id="template-2-about" contenteditable="true">About me..</div>
+              <div class="col-xs-6" id="template-2-more" contenteditable="true">More info..</div>
+            </div>
+            <div id="template-2-footer">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <div id="template-2-email" contenteditable="true">example@email.com</div>
+            </div>
+          </div>
+          <div class="mdl-dialog__actions">
+            <button id="submit-template-2-button" type="submit" name="submit" value="Submit Template 2" class="btn-sm btn-success mdl-button" disabled="disabled">Submit</button>
+            <button id="cancel-template-2-button" type="button" class="btn-sm btn-warning mdl-button">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Tempate 1 Edit Modal -->
+  <div class="modal fade in" id="page-template-1-edit-modal" tabindex="-1" role="dialog" style="display:none">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="title-container">
+          <input class="page-title" type="text" name="page[title]" maxlength="50" id="edit-page-1-title" placeholder="*Page Title">
+        </div>
+        <div class='alert alert-success temp-alerts' role='alert'>
+          <strong>Yo Yo!</strong> You know you can edit these pages on the fly right? I know... crazy. Go ahead try it out.
+        </div>
+        <div class="modal-body">
+          <div id="page-1-template-edit">
+          </div>
+          <div class="mdl-dialog__actions">
+            <button id="submit-template-1-edit-button" type="submit" name="submit" value="Submit Template 1" class="btn-success btn-sm mdl-button">Save</button>
+            <button id="delete-template-1-edit-button" type="submit" class="btn-danger btn-sm mdl-button">Delete</button>
+            <button id="cancel-template-1-edit-button" type="button" class="btn-primary btn-sm mdl-button">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Tempate 2 Edit Modal -->
+  <div class="modal fade in" id="page-template-2-edit-modal" tabindex="-2" role="dialog" style="display:none">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="title-container">
+          <input class="page-title" type="text" name="page[title]" maxlength="50" id="edit-page-2-title" placeholder="*Page Title">
+        </div>
+        <div class='alert alert-success temp-alerts' role='alert'>
+          <strong>Yo Yo!</strong> You know you can edit these pages on the fly right? I know... crazy. Go ahead try it out.
+        </div>
+        <div class="modal-body">
+          <div id="page-2-template-edit">
+          </div>
+          <div class="mdl-dialog__actions">
+            <button id="submit-template-2-edit-button" type="submit" name="submit" value="Submit Template 2" class="btn-success btn-sm mdl-button">Save</button>
+            <button id="delete-template-2-edit-button" type="submit" class="btn-danger btn-sm mdl-button">Delete</button>
+            <button id="cancel-template-2-edit-button" type="button" class="btn-primary btn-sm mdl-button">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- start of create blog modal -->
+  <div class="modal fade" id="create-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Create New Blog</h4>
+        </div>
+        <div class="modal-body">
+          <!--  Start of error handling-->
+          <!--  End of error handling-->
+          <!--begin signup form-->
+          <form id="create-form">
+            <fieldset>
+              <legend>Enter a title and your blog content.</legend>
+              <textarea name="blogpost[blogpostTitle]" id="blogpost-title" placeholder="Enter Blog Title" cols="75"></textarea><br><br>
+              <textarea name="blogpost[blogpostContent]" id="blogpost-main-content" placeholder="Enter Blog Content" cols="75" rows="15"></textarea><br><br>
+              <input type="submit" name="submit" value="Submit">
+            </fieldset>
+          </form>
+          <!--end signup form-->
+        </div>
+        <div class="modal-footer">
+          <button id="create-close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+
+  <!--end create modal-->
+
+
+  <!-- This is the beginning of our dashboard. -->
+  <div id="dashboard">
+
+    <div class="dash-container col-xs-12 col-centered">
+      <!-- This container envelops our pages and blogpost containers -->
+      <p>I'm a container!</p>
+      <div class="pages-container col-xs-4">
+        <!-- Pages container -->
+        <h1>Web Pages</h1>
+        <br><hr class="style17"><br>
+        <div class="template-picker">
+          <h4>Select a template to create a new web page</h4>
+          <button id="display-page-template-1" type="submit" name="submit" class="template-type-1"></button>
+          <button id="display-page-template-2" type="submit" name="submit" class="template-type-2"></button>
+
+        </div>
+        <!-- End template-picker -->
+        <br>
+
+        <div class="page-content-displayer">
+          <h4>My Created Pages</h4>
+          <p>Manage Your Pages Here</p>
+
+            <div class="page-content">
+
+            </div>
+
+          <!-- End page-content -->
+        </div>
+        <!-- End page-content-displayer -->
+
+      </div>
+      <!-- End pages-container -->
+
+      <div class="blogposts-container col-xs-8">
+        <!-- Blogposts container -->
+        <h1>blogPosts</h1>
+        <br><hr class="style17"><br>
+        <h4>View, create, edit and delete your blog posts.</h4>
+
+
+        <button type='button' class='btn btn-success' id='create-button'>Create New Blog</button>
+        <div class="blogpost-content">
+
+        </div>
+        <!-- End page-content -->
+      </div>
+      <!-- End blogposts-container -->
+
+    </div>
+    <!-- End dash-container -->
+  </div>
+
+  <!-- Creation of bottom navbar -->
+  <nav id="footerid" class="navbar navbar-inverse">
+    <div class="nav-container">
+      <p class="navbar-text pull-right">Go Away Alan Enterprises</p>
+    </div>
+    <!-- End nav-container -->
+  </nav>
+  <!-- End bottom navbar -->
+
+</body>
+
+</html>
