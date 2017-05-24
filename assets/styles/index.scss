@@ -91,6 +91,9 @@ blockquote em{
 
 // end blockquote stuff
 
+#page-template-1-modal, #page-template-2-modal, #page-template-1-edit-modal, #page-template-2-edit-modal {
+  overflow: scroll;
+}
 
 
 body {
@@ -192,12 +195,27 @@ img{
 // Settings for page template modal
 #page-1-template-default, #page-1-template-edit, #page-2-template-default, #page-2-template-edit {
   max-width: 600px;
-  min-height: 550px;
+  min-height: 450px;
 }
 
-#template-1-iframe, #template-1-edit-iframe {
-  min-height: 490px;
-}
+// #template-1-about, #template-1-header, #template-1-sub-header, #template-1-email,
+// #template-2-header, #template-2-sub-header, #template-header, #template-header-2,
+// #template-2-about, #template-2-more, #template-2-email {
+//   max-height: 100px;
+//   overflow: auto;
+// }
+//
+// #modal1-edit-header, #modal1-edit-subheader, #modal1-edit-about, #modal1-edit-contact,
+// #modal2-edit-header, #modal2-edit-column-header1, #modal2-edit-column-header2, #modal2-edit-about,
+// #modal2-edit-more, #modal2-editcontent  {
+//   max-height: 100px;
+//   overflow: auto;
+// }
+
+// row.scrollbars {
+//   max-height: 100px;
+//   overflow: auto;
+// }
 
 // This is for dashboard styling
 #dashboard {
