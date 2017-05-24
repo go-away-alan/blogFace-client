@@ -134,6 +134,8 @@ const resetTemplate2Fields = function () {
   $('#template-2-sub-header').text('Sub-Header')
   $('#template-2-about').text('About me..')
   $('#template-2-more').text('More info..')
+  $('#template-header').text('About Me')
+  $('#template-header-2').text('More Info..')
   $('#template-2-email').text('example@email.com')
   $('#create-page-2-title').val('')
 }
@@ -162,6 +164,8 @@ const hideTemplate2Edit = function (event) {
   $('#create-page-2-title').val('')
   $('#delete-template-2-edit-button').off()
   $('#submit-template-2-edit-button').off()
+  $('#template-header').off()
+  $('#template-header-2').off()
 }
 
 const addHandlers = () => {
