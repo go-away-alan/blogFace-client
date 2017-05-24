@@ -200,13 +200,14 @@ img{
 }
 
 // email 20px
-#template-1-email, #template-2-email, #modal1-edit-contact {
+#template-1-email, #template-2-email, #modal1-edit-contact, #modal2-edit-contact {
   max-height: 50px;
   overflow: auto;
 }
 
-// subheaders 30px
-#template-1-sub-header, #template-2-header, #template-2-sub-header, #modal1-edit-subheader  {
+// subheaders 70px
+#template-1-sub-header, #template-2-header, #template-2-sub-header, #modal1-edit-subheader,
+#modal2-edit-subheader  {
   max-height: 70px;
   overflow: auto;
 }
